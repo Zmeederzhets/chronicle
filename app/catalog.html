@@ -13,7 +13,12 @@
 <header class="header">
     <div class="header__wrapper">
         <div class="header__logo">
-            <a href="index.html"><img src="" width="86px" height="35px" alt="Мишка"></a>
+            <a href="index.html">
+                <picture>
+                    <source media="(min-width: 1150px)" srcset="img/logo-desktop.svg">
+                    <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
+                    <img src="img/logo-mobile.svg" alt="Мишка">
+                </picture></a>
         </div>
         <nav class="menu">
             <ul class="menu__list">
@@ -24,11 +29,10 @@
                     <a class="menu__link" href="form.html">Вязание на заказ</a>
                 </li>
                 <li class="menu__item">
-                    <a class="menu__link" href="#">Поиск по сайту
-                    </a>
+                    <a class="menu__link" href="#"><img src="img/ico/search.svg" alt="Поиск"><span hidden>Поиск по сайту</span></a>
                 </li>
                 <li class="menu__item">
-                    <a class="menu__link" href="#">Корзина: пока пуста</a>
+                    <a class="menu__link" href="#"><img src="img/ico/cart.svg" alt="Корзина">Корзина: пока пуста</a>
                 </li>
                 <li class="menu__item">
                     <a class="menu__link" href="#">Новые поступления</a>
@@ -49,30 +53,57 @@
     </section>
     <section class="catalog">
         <div class="catalog__item">
-            <img src="" alt="Вязаный зайчик">
+            <picture class="catalog__picture">
+                <!-- WebP  на стандартные экраны и ритину для разный вьпортов-->
+                <source  type="image/webp" media="(min-width: 1150px)" srcset="img/catalog/photo-1-desktop_1x.webp 1x, img/catalog/photo-1-desktop_2x.webp 2x">
+                <source  type="image/webp" media="(min-width: 768px)" srcset="img/catalog/photo-1-tablet_1x.webp 1x, img/catalog/photo-1-tablet_2x.webp 2x">
+                <source  type="image/webp" srcset="img/catalog/photo-1-mobile_1x.webp, img/catalog/photo-1-mobile_2x.webp 2x">
+                <!--jpg на стандартные экраны и ритину для разный вьпортов-->
+                <source media="(min-width: 1150px)" srcset="img/catalog/photo-1-desktop_1x.jpg 1x, img/catalog/photo-1-desktop_2x.jpg 2x">
+                <source media="(min-width: 768px)" srcset="img/catalog/photo-1-tablet_1x.jpg 1x, img/catalog/photo-1-tablet_2x.jpg 2x">
+                <img class="catalog__img" src="img/catalog/photo-1-mobile_1x.jpg" srcset="img/catalog/photo-1-mobile_2x.jpg 2x" alt="Вязаный зайчик">
+            </picture>
             <h3 class="catalog__title">Зайчик-попрыгайчик</h3>
             <p class="catalog__characteristic">Рост 30 см, вес 200 г</p>
             <div class="sale">
                 <p class="catalog__price">1 200 руб.</p>
-                <button type="button"><img src="" alt="Добавить в карзину"></button>
+                <button type="button"><img src="img/ico/cart.svg" alt="Добавить в карзину"></button>
             </div>
         </div>
         <div class="catalog__item">
-            <img src="" alt="Вязаная корзинка для белья">
+            <picture class="catalog__picture">
+                <!-- WebP  на стандартные экраны и ритину для разный вьпортов-->
+                <source  type="image/webp" media="(min-width: 1150px)" srcset="img/catalog/photo-2-desktop_1x.webp 1x, img/catalog/photo-2-desktop_2x.webp 2x">
+                <source  type="image/webp" media="(min-width: 768px)" srcset="img/catalog/photo-2-tablet_1x.webp 1x, img/catalog/photo-2-tablet_2x.webp 2x">
+                <source  type="image/webp" srcset="img/catalog/photo-2-mobile_1x.webp, img/catalog/photo-2-mobile_2x.webp 2x">
+                <!--jpg на стандартные экраны и ритину для разный вьпортов-->
+                <source media="(min-width: 1150px)" srcset="img/catalog/photo-2-desktop_1x.jpg 1x, img/catalog/photo-2-desktop_2x.jpg 2x">
+                <source media="(min-width: 768px)" srcset="img/catalog/photo-2-tablet_1x.jpg 1x, img/catalog/photo-2-tablet_2x.jpg 2x">
+                <img class="catalog__img" src="img/catalog/photo-2-mobile_1x.jpg" srcset="img/catalog/photo-2-mobile_2x.jpg 2x" alt="Вязаная корзинка для белья">
+            </picture>
             <h3 class="catalog__title">Корзинка для белья</h3>
             <p class="catalog__characteristic">Диаметр 15 см, высота 10 см</p>
             <div class="sale">
                 <p class="catalog__price">690 руб.</p>
-                <button type="button"><img src="" alt="Добавить в карзину"></button>
+                <button type="button"><img src="img/ico/cart.svg" alt="Добавить в карзину"></button>
             </div>
         </div>
         <div class="catalog__item">
-            <img src="" alt="Большая вязаная корзинка для игрушек">
+            <picture class="catalog__picture">
+                <!-- WebP  на стандартные экраны и ритину для разный вьпортов-->
+                <source  type="image/webp" media="(min-width: 1150px)" srcset="img/catalog/photo-3-desktop_1x.webp 1x, img/catalog/photo-3-desktop_2x.webp 2x">
+                <source  type="image/webp" media="(min-width: 768px)" srcset="img/catalog/photo-3-tablet_1x.webp 1x, img/catalog/photo-3-tablet_2x.webp 2x">
+                <source  type="image/webp" srcset="img/catalog/photo-3-mobile_1x.webp, img/catalog/photo-3-mobile_2x.webp 2x">
+                <!--jpg на стандартные экраны и ритину для разный вьпортов-->
+                <source media="(min-width: 1150px)" srcset="img/catalog/photo-3-desktop_1x.jpg 1x, img/catalog/photo-3-desktop_2x.jpg 2x">
+                <source media="(min-width: 768px)" srcset="img/catalog/photo-3-tablet_1x.jpg 1x, img/catalog/photo-3-tablet_2x.jpg 2x">
+                <img class="catalog__img" src="img/catalog/photo-3-mobile_1x.jpg" srcset="img/catalog/photo-3-mobile_2x.jpg 2x" alt="Большая вязаная корзинка для игрушек">
+            </picture>
             <h3 class="catalog__title">Большая корзинка для игрушек</h3>
             <p class="catalog__characteristic">Диаметр 30 см, высота 30 см</p>
             <div class="sale">
                 <p class="catalog__price">1 500 руб.</p>
-                <button type="button"><img src="" alt="Добавить в карзину"></button>
+                <button type="button"><img src="img/ico/cart.svg" alt="Добавить в карзину"></button>
             </div>
         </div>
     </section>
@@ -81,12 +112,29 @@
             <img src="" alt="">
             <h3>Процесс производства</h3>
         </div>
+        <picture class="video__picture">
+            <!-- WebP  на стандартные экраны и ритину для разный вьпортов-->
+            <source  type="image/webp" media="(min-width: 1150px)" srcset="img/catalog/video/video-desktop_1x.webp 1x, img/catalog/video/video-desktop_2x.webp 2x">
+            <source  type="image/webp" media="(min-width: 768px)" srcset="img/catalog/video/video-tablet_1x.webp 1x, img/catalog/video/video-tablet_2x.webp 2x">
+            <source  type="image/webp" srcset="img/catalog/video/video-mobile_1x.webp, img/catalog/video/video-mobile_2x.webp 2x">
+            <!--jpg на стандартные экраны и ритину для разный вьпортов-->
+            <source media="(min-width: 1150px)" srcset="img/catalog/video/video-desktop_1x.jpg 1x, img/catalog/video/video-desktop_2x.jpg 2x">
+            <source media="(min-width: 768px)" srcset="img/catalog/video/video-tablet_1x.jpg 1x, img/catalog/video/video-tablet_2x.jpg 2x">
+            <img class="video__img" src="img/catalog/video/video-mobile_1x.jpg" srcset="img/catalog/video/video-mobile_2x.jpg 2x" alt="Большая вязаная корзинка для игрушек">
+        </picture>
         <video src=""></video>
         <p>По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.</p>
         <button type="button">Сделать заказ</button>
     </section>
 </main>
 <footer>
+    <a href=""><img src="img/logo-footer.svg" alt="Логотип"></a>
+    <ul>
+        <li><img src="img/ico/insta.svg" alt="Инстаграм"></li>
+        <li><img src="img/ico/fb.svg" alt="Фейсбук"></li>
+        <li><img src="img/ico/twitter.svg" alt="Твиттер"></li>
+    </ul>
+    <a href="">Разработано<img src="img/ico/htmlacademy.svg" alt="Лого HTML-академии"></a>
 </footer>
 </body>
 </html>
