@@ -1,0 +1,56 @@
+.reviews {
+  position: relative;
+  &__title {
+  padding: 34px 0 38px;
+  }
+  &__text{
+    display: block;
+    font-family:$OpenSans;
+    font-size: 15px;
+    line-height: 30px;
+    font-weight: 400;
+    color: #444444;
+  }
+  &__name{
+    display: block;
+    padding-top: 40px;
+    font-family:$OpenSans;
+    font-style: normal;
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #000000;
+  }
+  &__author{
+    display: block;
+    padding-bottom: 36px;
+    line-height: 30px;
+    font-weight: 400;
+    color: #444444;
+  }
+  &__button{
+    margin-bottom: 38px;
+    display: flex;
+  }
+  &__arrow{
+    padding: 13px 0;
+    width: 50%;
+    background-color: #ffffff;
+    border: 1px solid #ececec;
+    &--back{
+      border-right: 0;
+    }
+  }
+
+  &__write{
+    margin-bottom: 51px;
+  }
+  &__line {
+    position: absolute;
+    width: 320px;
+    height: 6px;
+    left: 0;
+    right: 0;
+    bottom: -51px;
+  }
+}

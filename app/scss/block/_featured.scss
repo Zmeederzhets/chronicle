@@ -1,0 +1,57 @@
+.featured {
+  position: relative;
+
+  &__title {
+    padding-top: 34px;
+  }
+
+  &__subtitle {
+    padding-top: 8px;
+    font-family: $OpenSans;
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #63d1bb;
+  }
+
+  &__description {
+    padding-top: 30px;
+    font-family: $OpenSans;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #444444;
+  }
+
+  &__characteristic {
+    font-family: $OpenSans;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #444444;
+  }
+
+  &__price {
+    padding-top: 28px;
+    text-align: center;
+    font-family: $OpenSans;
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #444444;
+  }
+
+  &__button {
+    margin-top: 28px;
+    margin-bottom: 51px;
+  }
+
+  &__line {
+    position: absolute;
+    height: 6px;
+    left: 0;
+    right: 0;
+    bottom: -51px;
+  }
+}

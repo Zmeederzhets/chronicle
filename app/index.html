@@ -8,16 +8,47 @@
     <link rel="shortcut icon" href="img/ico/title.svg" type="image/svg">
     <title>Mishka</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&amp;lang=ru-RU&amp;apikey=d7daf4eb-01b8-4a66-9021-ffcbd1131182" type="text/javascript"></script>
+    <script>
+        let myMap;
+        ymaps.ready(init);
+        function init () {
+            // Создание экземпляра карты и его привязка к контейнеру с заданным id ("map").
+            myMap = new ymaps.Map('map', {
+                center:[59.938635, 30.323118],
+                zoom:17,  //коэффициент масштабирования.
+                controls: [], //для создания карты без элементов управления, в опции controls следует задать пустой массив.
+                behaviors:['scrollZoom',"multiTouch"],
+            }, {
+                suppressMapOpenBlock: true //убрал "как добраться" и т.п.
+            });
+
+            myPlacemark = new ymaps.Placemark([59.938635, 30.323118], {
+                hintContent: 'ул. Большая Конюшенная, д.19/8, офис 101'
+            }, {
+                // Своё изображение иконки метки.
+                iconImageHref: "img/ico/map-pin.svg",
+                // Размеры метки.
+                iconImageSize: [66, 101],
+                // Смещение левого верхнего угла иконки относительно
+                // её "ножки" (точки привязки).
+                iconImageOffset: [-33, -111]
+            });
+
+            myMap.geoObjects
+                .add(myPlacemark);
+        }
+    </script>
 </head>
 <body>
 <header class="header">
     <div class="header__wrapper">
         <div class="header__logo">
             <a href="index.html">
-                <picture>
+                <picture class="header__picture">
                     <source media="(min-width: 1150px)" srcset="img/logo-desktop.svg">
                     <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
-                    <img src="img/logo-mobile.svg" alt="Мишка">
+                    <img class="header__img" src="img/logo-mobile.svg" alt="Мишка">
                 </picture>
             </a>
         </div>
@@ -30,7 +61,8 @@
                     <a class="menu__link" href="form.html">Вязание на заказ</a>
                 </li>
                 <li class="menu__item">
-                    <a class="menu__link" href="#"><img src="img/ico/search.svg" alt="Поиск"><span class="menu__link--search">Поиск по сайту</span></a>
+                    <a class="menu__link" href="#"><img src="img/ico/search.svg" alt="Поиск"><span
+                            class="menu__link--search">Поиск по сайту</span></a>
                 </li>
                 <li class="menu__item">
                     <a class="menu__link" href="#"><img src="img/ico/cart.svg" alt="Корзина">Корзина: пока пуста</a>
@@ -49,62 +81,79 @@
     </div>
 </header>
 <main>
-    <section class="top">
+    <section class="top contain">
         <h1 class="top__title title">Милые штуки ручной работы для дома</h1>
         <div class="top__list">
             <div class="top__item">
-            <a class="top__interior">Предметы интерьера<img src="img/ico/interior.svg" alt=""></a>
+                <a class="top__link" href=""><span class="top__text">Предметы<br>интерьера</span><img class="top__img"
+                                                                                                      src="img/ico/interior.svg"
+                                                                                                      alt=""></a>
             </div>
-            <div class="top__item">
-            <a class="top__toys">Детские игрушки<img src="img/ico/toy.svg" alt=""></a>
+            <div class="top__item top__item--toys">
+                <a class="top__link" href=""><span class="top__text">Детские<br>игрушки</span><img class="top__img"
+                                                                                                   src="img/ico/toy.svg"
+                                                                                                   alt=""></a>
             </div>
         </div>
     </section>
-    <section class="featured">
-        <h2 class="featured__title">Вязаные корзинки</h2>
-        <p>ТОВАР НЕДЕЛИ</p>
+    <section class="featured contain">
+        <h2 class="featured__title title">Вязаные корзинки</h2>
+        <p class="featured__subtitle">ТОВАР НЕДЕЛИ</p>
         <p class="featured__description">Экологически чистая пряжа, ручная работа. Доступны в шести расцветках и трех
             размерах.</p>
         <table class="featured__characteristic">
-            <tr>
-                <td>Цвет:</td>
-                <td>«Тиффани»/серый</td>
+            <tr class="featured__item">
+                <td class="featured__term">Цвет:</td>
+                <td class="featured__meaning">«Тиффани»/серый</td>
             </tr>
-            <tr>
-                <td>Диаметр:</td>
-                <td>25 см</td>
+            <tr class="featured__item">
+                <td class="featured__term">Диаметр:</td>
+                <td class="featured__meaning">25 см</td>
             </tr>
-            <tr>
-                <td>Высота:</td>
-                <td>15 см</td>
+            <tr class="featured__item">
+                <td class="featured__term">Высота:</td>
+                <td class="featured__meaning">15 см</td>
             </tr>
         </table>
         <picture class="featured__picture">
             <!-- WebP  на стандартные экраны и ритину для разный вьпортов-->
-            <source  type="image/webp" media="(min-width: 1150px)" srcset="img/index/triple-set-desktop_1x.webp 1x, img/index/triple-set-desktop_2x.webp 2x">
-            <source  type="image/webp" media="(min-width: 768px)" srcset="img/index/triple-set-tablet_1x.webp 1x, img/index/triple-set-tablet_2x.webp 2x">
-            <source  type="image/webp" srcset="img/index/triple-set-mobile_1x.webp, img/index/triple-set-mobile_2x.webp 2x">
+            <source type="image/webp" media="(min-width: 1150px)"
+                    srcset="img/index/triple-set-desktop_1x.webp 1x, img/index/triple-set-desktop_2x.webp 2x">
+            <source type="image/webp" media="(min-width: 768px)"
+                    srcset="img/index/triple-set-tablet_1x.webp 1x, img/index/triple-set-tablet_2x.webp 2x">
+            <source type="image/webp"
+                    srcset="img/index/triple-set-mobile_1x.webp, img/index/triple-set-mobile_2x.webp 2x">
             <!--jpg на стандартные экраны и ритину для разный вьпортов-->
-            <source media="(min-width: 1150px)" srcset="img/index/triple-set-desktop_1x.jpg 1x, img/index/triple-set-desktop_2x.jpg 2x">
-            <source media="(min-width: 768px)" srcset="img/index/triple-set-tablet_1x.jpg 1x, img/index/triple-set-tablet_2x.jpg 2x">
-            <img class="featured__img" src="img/index/triple-set-mobile_1x.jpg" srcset="img/index/triple-set-mobile_2x.jpg 2x" alt="Вязаные корзинки">
+            <source media="(min-width: 1150px)"
+                    srcset="img/index/triple-set-desktop_1x.jpg 1x, img/index/triple-set-desktop_2x.jpg 2x">
+            <source media="(min-width: 768px)"
+                    srcset="img/index/triple-set-tablet_1x.jpg 1x, img/index/triple-set-tablet_2x.jpg 2x">
+            <img class="featured__img" src="img/index/triple-set-mobile_1x.jpg"
+                 srcset="img/index/triple-set-mobile_2x.jpg 2x" alt="Вязаные корзинки">
         </picture>
-        <p class="featured__price">990 руб.</p>
+        <p class="featured__price">Цена: 990 руб.</p>
         <button class="featured__button button">ЗАКАЗАТЬ</button>
+        <img class="featured__line" src="img/zigzag-line.svg" alt="">
     </section>
-    <section class="about">
+    <section class="about contain">
         <h2 class="about__title title">Коротко о нас:</h2>
         <ul class="about__list">
-            <li class="about__item"><img src="img/ico/feature-1.svg" alt="">Экологически чистые материалы</li>
-            <li class="about__item"><img src="img/ico/feature-2.svg" alt="">Скандинавский стиль по российской цене</li>
-            <li class="about__item"><img src="img/ico/feature-3.svg" alt="">Увеличивает лайки на фотографиях</li>
-            <li class="about__item"><img src="img/ico/feature-4.svg" alt="">Связано вручную с любовью и умилением</li>
-            <li class="about__item"><img src="img/ico/feature-5.svg" alt="">Поддержка отечественного производителя</li>
-            <li class="about__item"><img src="img/ico/feature-6.svg" alt="">Поставляется в подарочной упаковке</li>
+            <li class="about__item"><img width="32px" height="37" src="img/ico/feature-1.svg" alt="">
+                <p class="about__text">Экологически чистые материалы</p></li>
+            <li class="about__item"><img width="47" height="27" src="img/ico/feature-2.svg" alt="">
+                <p class="about__text">Скандинавский стиль по российской цене</p></li>
+            <li class="about__item"><img width="34" height="27" src="img/ico/feature-3.svg" alt="">
+                <p class="about__text">Увеличивает лайки на фотографиях</p></li>
+            <li class="about__item"><img width="35" height="34" src="img/ico/feature-4.svg" alt="">
+                <p class="about__text">Связано вручную с любовью и умилением</p></li>
+            <li class="about__item"><img width="55" height="23" src="img/ico/feature-5.svg" alt="">
+                <p class="about__text">Поддержка отечественного производителя</p></li>
+            <li class="about__item"><img width="33" height="32" src="img/ico/feature-6.svg" alt="">
+                <p class="about__text">Поставляется в подарочной упаковке</p></li>
         </ul>
     </section>
-    <section class="reviews">
-        <h2 class="reviews__title">Отзывы</h2>
+    <section class="reviews contain">
+        <h2 class="reviews__title  title">Отзывы</h2>
         <div class="container reviews__slider">
             <div class="reviews__list">
                 <blockquote class="reviews__item reviews__slider-item">
@@ -120,14 +169,21 @@
                 </blockquote>
             </div>
             <div class="reviews__button">
-                <button class="reviews__button--back" aria-label="Предыдущий отзыв"><img src="img/ico/back-arrow.svg" alt=""></button>
-                <button class="reviews__button--next" aria-label="Следующий отзыв"><img src="img/ico/next-arrow.svg" alt=""></button>
+                <button class="reviews__arrow reviews__arrow--back" aria-label="Предыдущий отзыв"><img width="50px"
+                                                                                                       height="26px"
+                                                                                                       src="img/ico/back-arrow.svg"
+                                                                                                       alt=""></button>
+                <button class="reviews__arrow reviews__arrow--next" aria-label="Следующий отзыв"><img width="50px"
+                                                                                                      height="26px"
+                                                                                                      src="img/ico/next-arrow.svg"
+                                                                                                      alt=""></button>
             </div>
-            <a href="#" class="reviews__write">Написать</a>
+            <a href="#" class="reviews__write button">Написать</a>
         </div>
+        <img class="reviews__line" src="img/zigzag-line.svg" alt="">
     </section>
     <section class="contacts">
-        <img src="img/ico/flag.svg" alt="">
+        <img class="contacts__flag" src="img/ico/flag.svg" alt="">
         <h2 class="contacts__title title">Контакты</h2>
         <table class="contacts__list">
             <tr>
@@ -142,12 +198,11 @@
                 </td>
             </tr>
         </table>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d970.8561666238869!2d30.32270462930076!3d59.938632748395996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCDQoNC-0YHRgdC40Y8sIDE5MTE4Ng!5e0!3m2!1sru!2sby!4v1630431340933!5m2!1sru!2sby"
-                width="525px" height="457px"></iframe>
+        <div id="map" class="contacts__map map"></div>
         <button class="contacts__button button">Напишите нам</button>
     </section>
 </main>
-<footer>
+<footer class="footer contain">
     <a href=""><img src="img/logo-footer.svg" alt="Логотип"></a>
     <ul>
         <li><img src="img/ico/insta.svg" alt="Инстаграм"></li>
@@ -158,4 +213,6 @@
 </footer>
 </body>
 </html>
+
+
 

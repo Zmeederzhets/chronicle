@@ -1,0 +1,19 @@
+.header {
+  box-shadow: 0 1px 0 0 #ececec, inset 0 1px 0 0 #ececec;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__logo {
+    display: block;
+    margin: 0 auto;
+    padding: 22px 0;
+  }
+
+  &__img {
+    width: 86px;
+    height: 35px;
+  }
+}

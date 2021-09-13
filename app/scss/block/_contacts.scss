@@ -1,0 +1,11 @@
+.contacts {
+  &__flag{
+    display: none;
+  }
+
+  &__map {
+    width: 100%;
+    height: 457px;
+    border: 0;
+  }
+}
