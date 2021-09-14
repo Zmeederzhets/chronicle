@@ -1,7 +1,7 @@
 .reviews {
   position: relative;
   &__title {
-  padding: 34px 0 38px;
+  padding: 30px 0 22px;
   }
   &__text{
     display: block;
@@ -13,7 +13,7 @@
   }
   &__name{
     display: block;
-    padding-top: 40px;
+    padding-top: 30px;
     font-family:$OpenSans;
     font-style: normal;
     font-size: 17px;
@@ -23,17 +23,17 @@
   }
   &__author{
     display: block;
-    padding-bottom: 36px;
+    padding-bottom: 32px;
     line-height: 30px;
     font-weight: 400;
     color: #444444;
   }
   &__button{
-    margin-bottom: 38px;
+    margin-bottom: 36px;
     display: flex;
   }
   &__arrow{
-    padding: 13px 0;
+    padding: 12px 0;
     width: 50%;
     background-color: #ffffff;
     border: 1px solid #ececec;

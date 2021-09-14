@@ -4,11 +4,15 @@
   }
 
   &__title {
-    padding-top: 44px;
+    padding-top: 36px;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 700;
+    color: #000000;
   }
 
   &__list {
-    padding-top: 42px;
+    padding-top: 24px;
     font-family: $OpenSans;
     font-size: 15px;
     line-height: 30px;
@@ -23,7 +27,7 @@
   }
 
   &__tr {
-    padding-bottom: 40px;
+    padding-bottom: 30px;
     display: grid;
     grid-template-columns: 19% 1fr;
     gap: 30px;
