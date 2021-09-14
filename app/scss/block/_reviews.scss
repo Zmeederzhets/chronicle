@@ -47,10 +47,11 @@
   }
   &__line {
     position: absolute;
-    width: 320px;
     height: 6px;
     left: 0;
     right: 0;
     bottom: -51px;
+    background-image: url("/img/zigzag-line.svg");
+    background-size: contain;
   }
 }

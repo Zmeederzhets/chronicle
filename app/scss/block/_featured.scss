@@ -17,6 +17,7 @@
 
   &__description {
     padding-top: 30px;
+    padding-bottom: 22px;
     font-family: $OpenSans;
     font-size: 15px;
     line-height: 24px;
@@ -25,11 +26,29 @@
   }
 
   &__characteristic {
+    width: 100%;
     font-family: $OpenSans;
     font-size: 15px;
     line-height: 20px;
     font-weight: 400;
     color: #444444;
+  }
+  &__list{
+    display: grid;
+ }
+  &__item{
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    align-items: center;
+    border-bottom: solid 1px #ececec;
+  }
+  &__term{
+    padding: 10px 0;
+  }
+  &__meaning{ padding: 10px 0;
+  }
+  &__img{
+    padding-top: 28px;
   }
 
   &__price {
@@ -53,5 +72,7 @@
     left: 0;
     right: 0;
     bottom: -51px;
+    background-image: url("/img/zigzag-line.svg");
+    background-size: contain;
   }
 }

@@ -1,0 +1,34 @@
+.footer{
+  background-color: #F1F1F1;
+
+  &__logo{
+    display: none;
+  }
+
+  &__list{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+  }
+  &__item{
+    padding: 25px 20px 27px;
+  }
+  &__line{
+    color: #e5e5e5;
+  }
+  &__link{
+    padding-top: 22px;
+    padding-bottom: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__text{
+    padding-right: 25px;
+    font-size: 19px;
+    line-height: 18px;
+    font-weight: 700;
+    color: #000000;
+  }
+}

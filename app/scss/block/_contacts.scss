@@ -1,11 +1,46 @@
 .contacts {
-  &__flag{
+  &__flag {
     display: none;
+  }
+
+  &__title {
+    padding-top: 44px;
+  }
+
+  &__list {
+    padding-top: 42px;
+    font-family: $OpenSans;
+    font-size: 15px;
+    line-height: 30px;
+    font-weight: 400;
+    color: #444444;
+  }
+
+  &__tbody {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__tr {
+    padding-bottom: 40px;
+    display: grid;
+    grid-template-columns: 19% 1fr;
+    gap: 30px;
+  }
+
+  &__td--mail {
+    border-bottom: solid 1px #62D1BA;
   }
 
   &__map {
     width: 100%;
     height: 457px;
     border: 0;
+  }
+  &__button{
+    margin-top: 39px;
+    margin-bottom: 39px;
+    max-width: 260px
   }
 }
