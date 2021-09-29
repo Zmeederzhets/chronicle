@@ -1,0 +1,18 @@
+.contain {
+    max-width: 320px;
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    @include min-width(sm) {
+        max-width: 668px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    @include min-width(lg) {
+        max-width: 1050px;
+        padding-left: 75px;
+        padding-right: 75px;
+    }
+}

@@ -1,5 +1,2 @@
-import 'normalize.css';
-
-import './main'
-
-
+import './main';
+import './map';

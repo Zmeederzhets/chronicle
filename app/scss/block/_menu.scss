@@ -1,71 +1,163 @@
-.menu{
-  &__burger{
-    position: absolute;
-    right: 31px;
-    top: 50%;
-    width: 20px;
-    height: 2px;
-    background-color:  #000;
-    &:before{
-      content: "";
-      position: absolute;
-      bottom: 6px;
-      width: 20px;
-      height: 2px;
-      background-color: #000;
+.menu {
+    position: initial;
+    @include min-width(lg) {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
-    &:after{
-      content: "";
-      position: absolute;
-      top: 6px;
-      width: 20px;
-      height: 2px;
-      background-color:  #000;
+
+    &__burger {
+        position: absolute;
+        right: 31px;
+        top: 50%;
+        width: 20px;
+        height: 2px;
+        background-color: #000;
+        @include min-width(lg) {
+            display: none;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            bottom: 6px;
+            width: 20px;
+            height: 2px;
+            background-color: #000;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            width: 20px;
+            height: 2px;
+            background-color: #000;
+        }
+
+        &--open {
+            background-color: white;
+
+            &:before {
+                bottom: 0;
+                transform: rotate(45deg);
+            }
+
+            &:after {
+                top: 0;
+                transform: rotate(-45deg);
+            }
+        }
     }
-  }
-  &__burger--open{
-    background-color: white;
-    &:before{
-      bottom: 0;
-      transform: rotate(45deg)
+
+    &__list {
+        display: none;
+        &--open {
+            @include max-width(md) {
+                position: absolute;
+                top: 79px;
+                left: 0;
+                right: 0;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(2, min(79px));
+                background-color: #ffffff;
+                z-index: 20;
+            }
+        }
+
+        @include min-width(lg) {
+            display: flex;
+            justify-content: flex-start;
+            z-index: 20;
+        }
+
+        &--right {
+            justify-content: flex-end;
+        }
     }
-    &:after{
-      top: 0;
-      transform: rotate(-45deg)
+    &__list--right.menu__list--open {
+        top: 236px;
     }
-  }
-  &__list{
-    display: none;
-    &--open{
-      position: absolute;
-      top: 79px;
-      left: 0;
-      right: 0;
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: repeat(4, min(79px));
-      background-color: #FFFFFF;
-      z-index: 20;
+
+    &__item {
+        position: relative;
+        padding-left: 76px;
+        display: flex;
+        align-items: center;
+        box-shadow: 0px 1px 0px 0px #ececec, inset 0px 1px 0px 0px #ececec;
+        @include min-width(lg) {
+            box-shadow: none;
+            border-left: solid 1px #ededed;
+            padding: 30px 0 35px 0;
+        }
     }
-  }
-  &__item{
-    position: relative;
-    padding-left: 76px;
-    display: flex;
-    align-items: center;
-    box-shadow: 0px 1px 0px 0px #ececec, inset 0px 1px 0px 0px #ececec;
-  }
-  &__item--open{
-    display: none;
-  }
-  &__img{
-    position: absolute;
-    left: 26px;
-  }
-  &__link{
-    font-size: 17px;
-    line-height: 24px;
-    font-weight: 700;
-    color: #000000;
-  }
+
+    &__item--open {
+        display: none;
+        @include min-width(lg) {
+            display: flex;
+            padding: 18px 0 0 0;
+            box-shadow: none;
+            border-left: none;
+        }
+    }
+
+    &__item--left {
+        @include min-width(lg) {
+            border-left: none;
+            width: 184px;
+        }
+    }
+
+    &__item--second {
+        @include min-width(lg) {
+            padding-left: 32px;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        left: 26px;
+        @include min-width(lg) {
+            position: initial;
+            padding-left: 32px;
+            padding-right: 32px;
+        }
+    }
+
+    &__link {
+        font-size: 17px;
+        line-height: 24px;
+        font-weight: 700;
+        color: #000000;
+        @include min-width(lg) {
+            display: flex;
+            align-items: center;
+            font-size: 17px;
+            line-height: 24px;
+            font-weight: 700;
+            color: #000000;
+            &--down {
+                font-size: 15px;
+            }
+        }
+
+        &--search {
+            display: initial;
+            @include min-width(lg) {
+                display: none;
+            }
+        }
+    }
+
+    &__text {
+        font-size: 15px;
+        line-height: 24px;
+        font-weight: 400;
+        color: #444444;
+    }
 }

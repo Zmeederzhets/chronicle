@@ -1,57 +1,67 @@
 .top {
-  position: relative;
-  background-image: url("/img/index/background/hero-mobile_1x.jpg");
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: -19px;
-  background-size: 575px auto;
-  @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
-    background-image: url("/img/index/background/hero-mobile_2x.jpg");
-  }
-
-  &__title {
-    margin: 0;
-    padding: 76px 0 326px;
-    font-size: 27px;
-    color: #010000;
-    text-align: center;
-  }
-
-  &__list {
-    position: absolute;
-    padding: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-
-  &__item {
-    padding: 0 30px;
-    background-color: #63d1bb;
-
-    &--toys {
-      background-color: #56c3b2;
+    position: relative;
+    background-image: url('/img/index/background/hero-mobile_1x.jpg');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: -19px;
+    background-size: 575px auto;
+    @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+        background-image: url('/img/index/background/hero-mobile_2x.jpg');
     }
-  }
+    @include min-width(lg) {
+        background-image: url('/img/index/background/hero-desktop_1x.jpg');
+        @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+            background-image: url('/img/index/background/hero-desktop_2x.jpg');
+        }
+    }
 
-  &__link {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    &__title {
+        margin: 0;
+        padding: 76px 0 326px;
+        font-size: 27px;
+        color: #010000;
+        text-align: center;
+        @include min-width(lg) {
+            padding: 154px 0 566px;
+            font-size: 53px;
+            line-height: 57px;
+        }
+    }
 
-  }
+    &__list {
+        position: absolute;
+        padding: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
 
-  &__text {
-    padding: 28px 0;
-    font-family: $OpenSans;
-    font-size: 19px;
-    line-height: 24px;
-    font-weight: 700;
-    color: #ffffff;
-  }
+    &__item {
+        padding: 0 30px;
+        background-color: #63d1bb;
 
-  &__img {
-    width: 62px;
-    height: 62px;
-  }
+        &--toys {
+            background-color: #56c3b2;
+        }
+    }
+
+    &__link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__text {
+        padding: 28px 0;
+        font-family: $OpenSans;
+        font-size: 19px;
+        line-height: 24px;
+        font-weight: 700;
+        color: #ffffff;
+    }
+
+    &__img {
+        width: 62px;
+        height: 62px;
+    }
 }

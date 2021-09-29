@@ -1,24 +1,22 @@
 .about {
-  &__title {
-    padding: 34px 0 30px;
-  }
+    &__title {
+        padding: 34px 0 30px;
+    }
 
-  &__list {
-    display: flex;
-    flex-direction: column;
-  }
-  &__item{
-    display: flex;
-    flex-direction: column;
-
-  }
-  &__text{
-    padding: 23px 0 30px;
-    font-family: $OpenSans;
-    font-size: 17px;
-    line-height: 20px;
-    font-weight: 700;
-    color: #000000;
-  }
-
+    &__list {
+        display: flex;
+        flex-direction: column;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+    }
+    &__text {
+        padding: 23px 0 30px;
+        font-family: $OpenSans;
+        font-size: 17px;
+        line-height: 20px;
+        font-weight: 700;
+        color: #000000;
+    }
 }

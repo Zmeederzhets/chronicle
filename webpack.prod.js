@@ -1,112 +1,108 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const CleanWebpackPlugin = require('clean-webpack-plugin'); //installed via npm
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
 
 const buildPath = path.resolve(__dirname, 'dist');
 
 module.exports = {
-    devtool: 'source-map',
-    entry: [
-        './app/js/index.js',
-        './app/scss/index.scss'
-    ],
-    output: {
-        filename: '[name].[hash:20].js',
-        path: buildPath
-    },
-    node: {
-        fs: 'empty'
-    },
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-                options: {
-                    presets: ['env']
-                }
+  context: path.resolve(__dirname, 'app'),
+  entry: [
+    './js/index.js',
+    './scss/index.scss'
+  ],
+  mode: 'production',
+  output: {
+    filename: '[name].[hash:20].js',
+    path: buildPath
+  },
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      },
+      {
+        test: /\.(scss|css|sass)$/,
+        use: [MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [["autoprefixer"]],
+              },
             },
-            {
-                test: /\.(scss|css|sass)$/,
-                use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader
-                    },
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: true
-                        }
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            sourceMap: true
-                        }
-                    },
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            outputStyle: 'expanded',
-                            sourceMap: true,
-                            sourceMapContents: true
-                        }
-                    }
-                ]
-            },
-            {
-                test: /\.(png|gif|jpg|jpeg|svg)$/,
-                use: {
-                    loader: 'file-loader'
-                }
-            },
-            {
-                test: /\.(eot|woff|woff2|ttf)$/,
-                use: {
-                    loader: 'file-loader',
-                }
+          },
+          'sass-loader']
+      },
+      {
+        test: /\.font\.js/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              url: false
             }
+          },
+          'webfonts-loader'
         ]
-    },
-    plugins: [
-        new CleanWebpackPlugin(buildPath),
-        new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery",
-            "window.jQuery": "jquery"
-        }),
-        new HtmlWebpackPlugin({
-            template: './app/index.html',
-            inject: 'body',
-            filename: 'index.html'
-        }),
-        new HtmlWebpackPlugin({
-            template: './app/terms-and-conditions.html',
-            inject: 'body',
-            filename: 'terms-and-conditions.html'
-        }),
-        new CopyWebpackPlugin([{ from: 'app/images', to: 'images' }]),
-        new MiniCssExtractPlugin({
-            filename: 'styles.[contenthash].css'
-        }),
-        new OptimizeCssAssetsPlugin({
-            cssProcessor: require('cssnano'),
-            cssProcessorOptions: {
-                map: {
-                    inline: false,
-                },
-                discardComments: {
-                    removeAll: true
-                },
-                discardUnused: false
-            },
-            canPrint: true
-        })
+      }
     ]
+  },
+  optimization: {
+    minimizer: [
+      new CssMinimizerPlugin(),
+      new TerserPlugin({ parallel: true })
+    ],
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'main.[contenthash].css'
+    }),
+    new HtmlWebpackPlugin({
+      template: './index.html',
+      inject: 'body',
+      filename: 'index.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './form.html',
+      inject: 'body',
+      filename: 'form.html'
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: "img",
+          to: "img",
+          globOptions: {
+            dot: true,
+            gitignore: true,
+            ignore: ["**/font-icons/**"],
+          },
+        },
+        {
+          from: "./*.ico",
+          to: './'
+        },
+        {
+          from: "./*.svg",
+          to: './'
+        }
+      ]
+    }),
+  ]
 };

@@ -1,17 +1,23 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const PrettierPlugin = require("prettier-webpack-plugin");
 
 module.exports = {
+    context: path.resolve(__dirname, 'app'),
     entry: [
-        './app/js/index.js',
-        './app/scss/index.scss'
+        './js/index.js',
+        './scss/index.scss'
     ],
+    mode: 'development',
+    devtool: 'inline-source-map',
     devServer: {
         port: 9000,
         host: '192.168.100.26',
         //host: 'localhost',
-        contentBase: path.join(__dirname, './app/'),
+        static: {
+            directory: path.join(__dirname, './app/'),
+        },
         open: true,
         proxy: {
             '/api/**': {
@@ -22,57 +28,63 @@ module.exports = {
             }
         },
     },
-    node: {
-        fs: 'empty'
-    },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.m?js$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
-                options: {
-                    presets: ['env']
-                }
-            },
-            {
-                test: /\.(scss|css)$/,
-                use: [
-                    {
-                        loader: "style-loader"
-                    },
-                    {
-                        loader: "css-loader"
-                    },
-                    {
-                        loader: "sass-loader",
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
                     }
+                }
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
+            },
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                use: ['file-loader']
+            },
+            {
+                test: /\.font\.js/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            url: false
+                        }
+                    },
+                    'webfonts-loader'
                 ]
-            },
-            {
-                test: /\.(png|gif|jpg|jpeg|svg)$/,
-                use: {
-                    loader: 'file-loader'
-                }
-            },
-            {
-                test: /\.(eot|woff|woff2|ttf)$/,
-                use: {
-                    loader: 'file-loader',
-                }
             }
-        ],
+        ]
     },
     plugins: [
-        new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery",
-            "window.jQuery": "jquery"
+        new MiniCssExtractPlugin({
+            filename: 'main.[contenthash].css'
         }),
         new HtmlWebpackPlugin({
-            template: './app/index.html',
+            template: './index.html',
             inject: true
-        })
+        }),
+        new HtmlWebpackPlugin({
+            filename: "form.html",
+            template: './form.html',
+            inject: true
+        }),
+        new PrettierPlugin({
+                encoding: 'utf-8',
+                extensions: [".js", ".scss", ".html"]
+            }
+        )
     ]
 };
 

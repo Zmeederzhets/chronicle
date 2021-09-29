@@ -1,79 +1,79 @@
 .featured {
-  position: relative;
+    position: relative;
 
-  &__title {
-    padding-top: 27px;
-  }
+    &__title {
+        padding-top: 27px;
+    }
 
-  &__subtitle {
-    padding-top: 4px;
-    font-family: $OpenSans;
-    font-size: 17px;
-    line-height: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #63d1bb;
-  }
+    &__subtitle {
+        padding-top: 4px;
+        font-family: $OpenSans;
+        font-size: 17px;
+        line-height: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #63d1bb;
+    }
 
-  &__description {
-    padding-top: 24px;
-    padding-bottom: 15px;
-    font-family: $OpenSans;
-    font-size: 15px;
-    line-height: 24px;
-    font-weight: 400;
-    color: #444444;
-  }
+    &__description {
+        padding-top: 24px;
+        padding-bottom: 15px;
+        font-family: $OpenSans;
+        font-size: 15px;
+        line-height: 24px;
+        font-weight: 400;
+        color: #444444;
+    }
 
-  &__characteristic {
-    width: 100%;
-    font-family: $OpenSans;
-    font-size: 15px;
-    line-height: 20px;
-    font-weight: 400;
-    color: #444444;
-  }
-  &__list{
-    display: grid;
- }
-  &__item{
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    align-items: center;
-    border-bottom: solid 1px #ececec;
-  }
-  &__term{
-    padding: 10px 0;
-  }
-  &__meaning{ padding: 10px 0;
-  }
-  &__img{
-    padding-top: 24px;
-  }
+    &__characteristic {
+        width: 100%;
+        font-family: $OpenSans;
+        font-size: 15px;
+        line-height: 20px;
+        font-weight: 400;
+        color: #444444;
+    }
+    &__list {
+        display: grid;
+    }
+    &__item {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        align-items: center;
+        border-bottom: solid 1px #ececec;
+    }
+    &__term {
+        padding: 10px 0;
+    }
+    &__meaning {
+        padding: 10px 0;
+    }
+    &__img {
+        padding-top: 24px;
+    }
 
-  &__price {
-    padding-top: 20px;
-    text-align: center;
-    font-family: $OpenSans;
-    font-size: 17px;
-    line-height: 24px;
-    font-weight: 700;
-    color: #444444;
-  }
+    &__price {
+        padding-top: 20px;
+        text-align: center;
+        font-family: $OpenSans;
+        font-size: 17px;
+        line-height: 24px;
+        font-weight: 700;
+        color: #444444;
+    }
 
-  &__button {
-    margin-top: 28px;
-    margin-bottom: 36px;
-  }
+    &__button {
+        margin-top: 28px;
+        margin-bottom: 36px;
+    }
 
-  &__line {
-    position: absolute;
-    height: 6px;
-    left: 0;
-    right: 0;
-    bottom: -41px;
-    background-image: url("/img/zigzag-line.svg");
-    background-size: contain;
-  }
-
+    &__line {
+        position: absolute;
+        height: 6px;
+        left: 0;
+        right: 0;
+        bottom: -41px;
+        background-image: url('/img/zigzag-line.svg');
+        background-size: contain;
+    }
 }

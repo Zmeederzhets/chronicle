@@ -1,20 +1,37 @@
 .header {
-  position: relative;
-  box-shadow: 0 1px 0 0 #ececec, inset 0 1px 0 0 #ececec;
+    position: relative;
+    box-shadow: 0 1px 0 0 #ececec;
 
-  &__wrapper {
-    display: flex;
-    justify-content: center;
-  }
+    &__wrapper {
+        margin: 0 auto;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        @include min-width(sm) {
+            max-width: 768px;
+        }
+        @include min-width(lg) {
+            max-width: 1050px;
+            padding-left: 75px;
+            padding-right: 75px;
+        }
+    }
 
-  &__logo {
-    display: block;
-    margin: 0 auto;
-    padding: 20px 0;
-  }
+    &__logo {
+        display: block;
+        margin: 0 auto;
+        padding: 20px 0;
+        @include min-width(md) {
+            padding: 8px 0 3px;
+        }
+    }
 
-  &__img {
-    width: 86px;
-    height: 35px;
-  }
+    &__img {
+        width: 86px;
+        height: 35px;
+        @include min-width(md) {
+            width: 149px;
+            height: 72px;
+        }
+    }
 }
