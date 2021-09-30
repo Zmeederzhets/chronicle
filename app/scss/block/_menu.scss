@@ -1,10 +1,12 @@
 .menu {
     position: initial;
-    @include min-width(lg) {
+    @include min-width(sm) {
         position: absolute;
         width: 100%;
         top: 0;
         left: 0;
+    }
+    @include min-width(lg) {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
@@ -16,7 +18,7 @@
         width: 20px;
         height: 2px;
         background-color: #000;
-        @include min-width(lg) {
+        @include min-width(sm) {
             display: none;
         }
 
@@ -69,7 +71,7 @@
             }
         }
 
-        @include min-width(lg) {
+        @include min-width(sm) {
             display: flex;
             justify-content: flex-start;
             z-index: 20;
@@ -77,8 +79,24 @@
 
         &--right {
             justify-content: flex-end;
+            @include min-width(sm) {
+                padding-right: 50px;
+            }
+            @include min-width(lg) {
+                padding-right: 0px;
+            }
+        }
+        &--left {
+            @include min-width(sm) {
+                @include max-width(lg) {
+                    position: absolute;
+                    left: 47px;
+                    top: 76px;
+                }
+            }
         }
     }
+
     &__list--right.menu__list--open {
         top: 236px;
     }
@@ -89,7 +107,7 @@
         display: flex;
         align-items: center;
         box-shadow: 0px 1px 0px 0px #ececec, inset 0px 1px 0px 0px #ececec;
-        @include min-width(lg) {
+        @include min-width(sm) {
             box-shadow: none;
             border-left: solid 1px #ededed;
             padding: 30px 0 35px 0;
@@ -107,22 +125,37 @@
     }
 
     &__item--left {
-        @include min-width(lg) {
+        @include min-width(sm) {
             border-left: none;
+        }
+        @include min-width(lg) {
             width: 184px;
         }
     }
 
     &__item--second {
-        @include min-width(lg) {
+        @include min-width(sm) {
             padding-left: 32px;
+            @include max-width(lg) {
+                border-left: none;
+            }
+        }
+    }
+
+    &__item--tablet {
+        @include min-width(sm) {
+            @include max-width(lg) {
+                display: block;
+                border-left: none;
+                padding: 18px 0 0 0;
+            }
         }
     }
 
     &__img {
         position: absolute;
         left: 26px;
-        @include min-width(lg) {
+        @include min-width(sm) {
             position: initial;
             padding-left: 32px;
             padding-right: 32px;
@@ -134,7 +167,7 @@
         line-height: 24px;
         font-weight: 700;
         color: #000000;
-        @include min-width(lg) {
+        @include min-width(sm) {
             display: flex;
             align-items: center;
             font-size: 17px;
@@ -144,11 +177,16 @@
             &--down {
                 font-size: 15px;
             }
+            &--tablet {
+                @include max-width(lg) {
+                    font-size: 15px;
+                }
+            }
         }
 
         &--search {
             display: initial;
-            @include min-width(lg) {
+            @include min-width(sm) {
                 display: none;
             }
         }

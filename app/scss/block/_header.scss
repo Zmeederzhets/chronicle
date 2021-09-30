@@ -21,7 +21,12 @@
         display: block;
         margin: 0 auto;
         padding: 20px 0;
-        @include min-width(md) {
+        @include min-width(sm) {
+            margin: 0;
+            padding: 22px 0 14px 48px;
+        }
+        @include min-width(lg) {
+            margin: 0 auto;
             padding: 8px 0 3px;
         }
     }
@@ -29,7 +34,11 @@
     &__img {
         width: 86px;
         height: 35px;
-        @include min-width(md) {
+        @include min-width(sm) {
+            width: 113px;
+            height: 46px;
+        }
+        @include min-width(lg) {
             width: 149px;
             height: 72px;
         }
