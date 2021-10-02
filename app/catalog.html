@@ -1,145 +1,256 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="utf-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="#" type="image/x-icon">
-    <title>Mishka-каталог</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-<header class="header">
-    <div class="header__wrapper">
-        <div class="header__logo">
-            <a href="index.html">
-                <picture class="header__picture">
-                    <source media="(min-width: 1150px)" srcset="img/logo-desktop.svg">
-                    <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
-                    <img class="header__img" src="img/logo-mobile.svg" alt="Мишка">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="shortcut icon" href="#" type="image/x-icon" />
+        <title>Mishka-каталог</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="header__wrapper">
+                <div class="header__logo">
+                    <a href="index.html">
+                        <picture class="header__picture">
+                            <source media="(min-width: 1200px)" srcset="img/logo-desktop.svg" />
+                            <source media="(min-width: 768px)" srcset="img/logo-tablet.svg" />
+                            <img class="header__img" src="img/logo-mobile.svg" alt="Мишка" />
+                        </picture>
+                    </a>
+                </div>
+                <nav class="menu">
+                    <ul class="menu__list menu__list--left">
+                        <li class="menu__item menu__item--left">
+                            <a class="menu__link menu__link--tablet" href="catalog.html">Каталог товаров</a>
+                        </li>
+                        <li class="menu__item menu__item--second">
+                            <a class="menu__link menu__link--tablet" href="form.html">Вязание на заказ</a>
+                        </li>
+                    </ul>
+                    <ul class="menu__list menu__list--right">
+                        <li class="menu__item">
+                            <a class="menu__link" href="#"
+                                ><img class="menu__img" src="img/ico/search.svg" alt="Поиск" /><span
+                                    class="menu__link--search"
+                                    >Поиск по сайту</span
+                                ></a
+                            >
+                        </li>
+                        <li class="menu__item">
+                            <a class="menu__link" href="#"
+                                ><img class="menu__img" src="img/ico/cart.svg" alt="Корзина" />Корзина: пока пуста</a
+                            >
+                        </li>
+                    </ul>
+                    <ul class="menu__list">
+                        <li class="menu__item menu__item--left menu__item--open">
+                            <a class="menu__link menu__link--down" href="#">Новые поступления</a>
+                        </li>
+                        <li class="menu__item menu__item--second menu__item--open">
+                            <a class="menu__link menu__link--down" href="#">Распродажа</a>
+                        </li>
+                    </ul>
+                    <ul class="menu__list menu__list--right">
+                        <li class="menu__item menu__item--open menu__item--tablet">
+                            <span class="menu__text">Бесплатная доставка по России</span>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="menu__burger"></div>
+            </div>
+        </header>
+        <main>
+            <section class="top">
+                <h1 class="top__title title">Вязание на заказ</h1>
+            </section>
+            <section class="catalog">
+                <div class="catalog__item">
+                    <picture class="catalog__picture">
+                        <!-- WebP  на стандартные экраны и ритину для разный вьпортов-->
+                        <source
+                            type="image/webp"
+                            media="(min-width: 1150px)"
+                            srcset="img/catalog/photo-1-desktop_1x.webp 1x, img/catalog/photo-1-desktop_2x.webp 2x"
+                        />
+                        <source
+                            type="image/webp"
+                            media="(min-width: 768px)"
+                            srcset="img/catalog/photo-1-tablet_1x.webp 1x, img/catalog/photo-1-tablet_2x.webp 2x"
+                        />
+                        <source
+                            type="image/webp"
+                            srcset="img/catalog/photo-1-mobile_1x.webp, img/catalog/photo-1-mobile_2x.webp 2x"
+                        />
+                        <!--jpg на стандартные экраны и ритину для разный вьпортов-->
+                        <source
+                            media="(min-width: 1150px)"
+                            srcset="img/catalog/photo-1-desktop_1x.jpg 1x, img/catalog/photo-1-desktop_2x.jpg 2x"
+                        />
+                        <source
+                            media="(min-width: 768px)"
+                            srcset="img/catalog/photo-1-tablet_1x.jpg 1x, img/catalog/photo-1-tablet_2x.jpg 2x"
+                        />
+                        <img
+                            class="catalog__img"
+                            src="img/catalog/photo-1-mobile_1x.jpg"
+                            srcset="img/catalog/photo-1-mobile_2x.jpg 2x"
+                            alt="Вязаный зайчик"
+                        />
+                    </picture>
+                    <h3 class="catalog__title">Зайчик-попрыгайчик</h3>
+                    <p class="catalog__characteristic">Рост 30 см, вес 200 г</p>
+                    <div class="sale">
+                        <p class="catalog__price">1 200 руб.</p>
+                        <button type="button"><img src="img/ico/cart.svg" alt="Добавить в карзину" /></button>
+                    </div>
+                </div>
+                <div class="catalog__item">
+                    <picture class="catalog__picture">
+                        <!-- WebP  на стандартные экраны и ритину для разный вьпортов-->
+                        <source
+                            type="image/webp"
+                            media="(min-width: 1150px)"
+                            srcset="img/catalog/photo-2-desktop_1x.webp 1x, img/catalog/photo-2-desktop_2x.webp 2x"
+                        />
+                        <source
+                            type="image/webp"
+                            media="(min-width: 768px)"
+                            srcset="img/catalog/photo-2-tablet_1x.webp 1x, img/catalog/photo-2-tablet_2x.webp 2x"
+                        />
+                        <source
+                            type="image/webp"
+                            srcset="img/catalog/photo-2-mobile_1x.webp, img/catalog/photo-2-mobile_2x.webp 2x"
+                        />
+                        <!--jpg на стандартные экраны и ритину для разный вьпортов-->
+                        <source
+                            media="(min-width: 1150px)"
+                            srcset="img/catalog/photo-2-desktop_1x.jpg 1x, img/catalog/photo-2-desktop_2x.jpg 2x"
+                        />
+                        <source
+                            media="(min-width: 768px)"
+                            srcset="img/catalog/photo-2-tablet_1x.jpg 1x, img/catalog/photo-2-tablet_2x.jpg 2x"
+                        />
+                        <img
+                            class="catalog__img"
+                            src="img/catalog/photo-2-mobile_1x.jpg"
+                            srcset="img/catalog/photo-2-mobile_2x.jpg 2x"
+                            alt="Вязаная корзинка для белья"
+                        />
+                    </picture>
+                    <h3 class="catalog__title">Корзинка для белья</h3>
+                    <p class="catalog__characteristic">Диаметр 15 см, высота 10 см</p>
+                    <div class="sale">
+                        <p class="catalog__price">690 руб.</p>
+                        <button type="button"><img src="img/ico/cart.svg" alt="Добавить в карзину" /></button>
+                    </div>
+                </div>
+                <div class="catalog__item">
+                    <picture class="catalog__picture">
+                        <!-- WebP  на стандартные экраны и ритину для разный вьпортов-->
+                        <source
+                            type="image/webp"
+                            media="(min-width: 1150px)"
+                            srcset="img/catalog/photo-3-desktop_1x.webp 1x, img/catalog/photo-3-desktop_2x.webp 2x"
+                        />
+                        <source
+                            type="image/webp"
+                            media="(min-width: 768px)"
+                            srcset="img/catalog/photo-3-tablet_1x.webp 1x, img/catalog/photo-3-tablet_2x.webp 2x"
+                        />
+                        <source
+                            type="image/webp"
+                            srcset="img/catalog/photo-3-mobile_1x.webp, img/catalog/photo-3-mobile_2x.webp 2x"
+                        />
+                        <!--jpg на стандартные экраны и ритину для разный вьпортов-->
+                        <source
+                            media="(min-width: 1150px)"
+                            srcset="img/catalog/photo-3-desktop_1x.jpg 1x, img/catalog/photo-3-desktop_2x.jpg 2x"
+                        />
+                        <source
+                            media="(min-width: 768px)"
+                            srcset="img/catalog/photo-3-tablet_1x.jpg 1x, img/catalog/photo-3-tablet_2x.jpg 2x"
+                        />
+                        <img
+                            class="catalog__img"
+                            src="img/catalog/photo-3-mobile_1x.jpg"
+                            srcset="img/catalog/photo-3-mobile_2x.jpg 2x"
+                            alt="Большая вязаная корзинка для игрушек"
+                        />
+                    </picture>
+                    <h3 class="catalog__title">Большая корзинка для игрушек</h3>
+                    <p class="catalog__characteristic">Диаметр 30 см, высота 30 см</p>
+                    <div class="sale">
+                        <p class="catalog__price">1 500 руб.</p>
+                        <button type="button"><img src="img/ico/cart.svg" alt="Добавить в карзину" /></button>
+                    </div>
+                </div>
+            </section>
+            <section class="video">
+                <div>
+                    <img src="" alt="" />
+                    <h3>Процесс производства</h3>
+                </div>
+                <picture class="video__picture">
+                    <!-- WebP  на стандартные экраны и ритину для разный вьпортов-->
+                    <source
+                        type="image/webp"
+                        media="(min-width: 1150px)"
+                        srcset="img/catalog/video/video-desktop_1x.webp 1x, img/catalog/video/video-desktop_2x.webp 2x"
+                    />
+                    <source
+                        type="image/webp"
+                        media="(min-width: 768px)"
+                        srcset="img/catalog/video/video-tablet_1x.webp 1x, img/catalog/video/video-tablet_2x.webp 2x"
+                    />
+                    <source
+                        type="image/webp"
+                        srcset="img/catalog/video/video-mobile_1x.webp, img/catalog/video/video-mobile_2x.webp 2x"
+                    />
+                    <!--jpg на стандартные экраны и ритину для разный вьпортов-->
+                    <source
+                        media="(min-width: 1150px)"
+                        srcset="img/catalog/video/video-desktop_1x.jpg 1x, img/catalog/video/video-desktop_2x.jpg 2x"
+                    />
+                    <source
+                        media="(min-width: 768px)"
+                        srcset="img/catalog/video/video-tablet_1x.jpg 1x, img/catalog/video/video-tablet_2x.jpg 2x"
+                    />
+                    <img
+                        class="video__img"
+                        src="img/catalog/video/video-mobile_1x.jpg"
+                        srcset="img/catalog/video/video-mobile_2x.jpg 2x"
+                        alt="Большая вязаная корзинка для игрушек"
+                    />
                 </picture>
-            </a>
-        </div>
-        <nav class="menu">
-            <ul class="menu__list">
-                <li class="menu__item">
-                    <a class="menu__link" href="catalog.html">Каталог товаров</a>
+                <video src=""></video>
+                <p>
+                    По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши
+                    товары.
+                </p>
+                <button type="button">Сделать заказ</button>
+            </section>
+        </main>
+        <footer class="footer contain">
+            <a class="footer__logo" href=""><img src="img/logo-footer.svg" alt="Логотип" /></a>
+            <ul class="footer__list">
+                <li class="footer__item">
+                    <a href=""><img src="img/ico/insta.svg" alt="Инстаграм" /></a>
                 </li>
-                <li class="menu__item">
-                    <a class="menu__link" href="form.html">Вязание на заказ</a>
+                <li class="footer__item">
+                    <a href=""><img src="img/ico/fb.svg" alt="Фейсбук" /></a>
                 </li>
-                <li class="menu__item">
-                    <a class="menu__link" href="#"><img  class="menu__img" src="img/ico/search.svg" alt="Поиск"><span
-                            class="menu__link--search">Поиск по сайту</span></a>
-                </li>
-                <li class="menu__item">
-                    <a class="menu__link" href="#"><img class="menu__img" src="img/ico/cart.svg" alt="Корзина">Корзина: пока пуста</a>
-                </li>
-                <li class="menu__item menu__item--open">
-                    <a class="menu__link" href="#">Новые поступления</a>
-                </li>
-                <li class="menu__item menu__item--open">
-                    <a class="menu__link" href="#">Распродажа</a>
-                </li>
-                <li class="menu__item menu__item--open">
-                    <span class="menu__text">Бесплатная доставка по России</span>
+                <li class="footer__item">
+                    <a href=""><img src="img/ico/twitter.svg" alt="Твиттер" /></a>
                 </li>
             </ul>
-            <div class="menu__burger"></div>
-        </nav>
-    </div>
-</header>
-<main>
-    <section class="top">
-        <h1 class="top__title title">Вязание на заказ</h1>
-    </section>
-    <section class="catalog">
-        <div class="catalog__item">
-            <picture class="catalog__picture">
-                <!-- WebP  на стандартные экраны и ритину для разный вьпортов-->
-                <source  type="image/webp" media="(min-width: 1150px)" srcset="img/catalog/photo-1-desktop_1x.webp 1x, img/catalog/photo-1-desktop_2x.webp 2x">
-                <source  type="image/webp" media="(min-width: 768px)" srcset="img/catalog/photo-1-tablet_1x.webp 1x, img/catalog/photo-1-tablet_2x.webp 2x">
-                <source  type="image/webp" srcset="img/catalog/photo-1-mobile_1x.webp, img/catalog/photo-1-mobile_2x.webp 2x">
-                <!--jpg на стандартные экраны и ритину для разный вьпортов-->
-                <source media="(min-width: 1150px)" srcset="img/catalog/photo-1-desktop_1x.jpg 1x, img/catalog/photo-1-desktop_2x.jpg 2x">
-                <source media="(min-width: 768px)" srcset="img/catalog/photo-1-tablet_1x.jpg 1x, img/catalog/photo-1-tablet_2x.jpg 2x">
-                <img class="catalog__img" src="img/catalog/photo-1-mobile_1x.jpg" srcset="img/catalog/photo-1-mobile_2x.jpg 2x" alt="Вязаный зайчик">
-            </picture>
-            <h3 class="catalog__title">Зайчик-попрыгайчик</h3>
-            <p class="catalog__characteristic">Рост 30 см, вес 200 г</p>
-            <div class="sale">
-                <p class="catalog__price">1 200 руб.</p>
-                <button type="button"><img src="img/ico/cart.svg" alt="Добавить в карзину"></button>
-            </div>
-        </div>
-        <div class="catalog__item">
-            <picture class="catalog__picture">
-                <!-- WebP  на стандартные экраны и ритину для разный вьпортов-->
-                <source  type="image/webp" media="(min-width: 1150px)" srcset="img/catalog/photo-2-desktop_1x.webp 1x, img/catalog/photo-2-desktop_2x.webp 2x">
-                <source  type="image/webp" media="(min-width: 768px)" srcset="img/catalog/photo-2-tablet_1x.webp 1x, img/catalog/photo-2-tablet_2x.webp 2x">
-                <source  type="image/webp" srcset="img/catalog/photo-2-mobile_1x.webp, img/catalog/photo-2-mobile_2x.webp 2x">
-                <!--jpg на стандартные экраны и ритину для разный вьпортов-->
-                <source media="(min-width: 1150px)" srcset="img/catalog/photo-2-desktop_1x.jpg 1x, img/catalog/photo-2-desktop_2x.jpg 2x">
-                <source media="(min-width: 768px)" srcset="img/catalog/photo-2-tablet_1x.jpg 1x, img/catalog/photo-2-tablet_2x.jpg 2x">
-                <img class="catalog__img" src="img/catalog/photo-2-mobile_1x.jpg" srcset="img/catalog/photo-2-mobile_2x.jpg 2x" alt="Вязаная корзинка для белья">
-            </picture>
-            <h3 class="catalog__title">Корзинка для белья</h3>
-            <p class="catalog__characteristic">Диаметр 15 см, высота 10 см</p>
-            <div class="sale">
-                <p class="catalog__price">690 руб.</p>
-                <button type="button"><img src="img/ico/cart.svg" alt="Добавить в карзину"></button>
-            </div>
-        </div>
-        <div class="catalog__item">
-            <picture class="catalog__picture">
-                <!-- WebP  на стандартные экраны и ритину для разный вьпортов-->
-                <source  type="image/webp" media="(min-width: 1150px)" srcset="img/catalog/photo-3-desktop_1x.webp 1x, img/catalog/photo-3-desktop_2x.webp 2x">
-                <source  type="image/webp" media="(min-width: 768px)" srcset="img/catalog/photo-3-tablet_1x.webp 1x, img/catalog/photo-3-tablet_2x.webp 2x">
-                <source  type="image/webp" srcset="img/catalog/photo-3-mobile_1x.webp, img/catalog/photo-3-mobile_2x.webp 2x">
-                <!--jpg на стандартные экраны и ритину для разный вьпортов-->
-                <source media="(min-width: 1150px)" srcset="img/catalog/photo-3-desktop_1x.jpg 1x, img/catalog/photo-3-desktop_2x.jpg 2x">
-                <source media="(min-width: 768px)" srcset="img/catalog/photo-3-tablet_1x.jpg 1x, img/catalog/photo-3-tablet_2x.jpg 2x">
-                <img class="catalog__img" src="img/catalog/photo-3-mobile_1x.jpg" srcset="img/catalog/photo-3-mobile_2x.jpg 2x" alt="Большая вязаная корзинка для игрушек">
-            </picture>
-            <h3 class="catalog__title">Большая корзинка для игрушек</h3>
-            <p class="catalog__characteristic">Диаметр 30 см, высота 30 см</p>
-            <div class="sale">
-                <p class="catalog__price">1 500 руб.</p>
-                <button type="button"><img src="img/ico/cart.svg" alt="Добавить в карзину"></button>
-            </div>
-        </div>
-    </section>
-    <section class="video">
-        <div>
-            <img src="" alt="">
-            <h3>Процесс производства</h3>
-        </div>
-        <picture class="video__picture">
-            <!-- WebP  на стандартные экраны и ритину для разный вьпортов-->
-            <source  type="image/webp" media="(min-width: 1150px)" srcset="img/catalog/video/video-desktop_1x.webp 1x, img/catalog/video/video-desktop_2x.webp 2x">
-            <source  type="image/webp" media="(min-width: 768px)" srcset="img/catalog/video/video-tablet_1x.webp 1x, img/catalog/video/video-tablet_2x.webp 2x">
-            <source  type="image/webp" srcset="img/catalog/video/video-mobile_1x.webp, img/catalog/video/video-mobile_2x.webp 2x">
-            <!--jpg на стандартные экраны и ритину для разный вьпортов-->
-            <source media="(min-width: 1150px)" srcset="img/catalog/video/video-desktop_1x.jpg 1x, img/catalog/video/video-desktop_2x.jpg 2x">
-            <source media="(min-width: 768px)" srcset="img/catalog/video/video-tablet_1x.jpg 1x, img/catalog/video/video-tablet_2x.jpg 2x">
-            <img class="video__img" src="img/catalog/video/video-mobile_1x.jpg" srcset="img/catalog/video/video-mobile_2x.jpg 2x" alt="Большая вязаная корзинка для игрушек">
-        </picture>
-        <video src=""></video>
-        <p>По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши товары.</p>
-        <button type="button">Сделать заказ</button>
-    </section>
-</main>
-<footer class="footer contain">
-    <a  class="footer__logo" href=""><img src="img/logo-footer.svg" alt="Логотип"></a>
-    <ul class="footer__list">
-        <li class="footer__item"><a href=""><img src="img/ico/insta.svg" alt="Инстаграм"></a></li>
-        <li class="footer__item"><a href=""><img src="img/ico/fb.svg" alt="Фейсбук"></a></li>
-        <li class="footer__item"><a href=""><img src="img/ico/twitter.svg" alt="Твиттер"></a></li>
-    </ul>
-    <hr class="footer__line">
-    <a class="footer__link" href=""><p class="footer__text">Разработано</p><img class="footer__img" src="img/ico/htmlacademy.svg" alt="Лого HTML-академии"></a>
-</footer>
-</body>
+            <hr class="footer__line" />
+            <a class="footer__link" href=""
+                ><p class="footer__text">Разработано</p>
+                <img class="footer__img" src="img/ico/htmlacademy.svg" alt="Лого HTML-академии"
+            /></a>
+        </footer>
+    </body>
 </html>
-

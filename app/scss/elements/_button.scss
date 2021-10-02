@@ -1,18 +1,19 @@
+.button {
+    width: 100%;
+    padding: 13px 0;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    border: 2px solid #444444;
+    font-family: $OpenSans;
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #444444;
+}
+
 /*
-.button{
-  width: 100%;
-  padding: 13px 0;
-  display: flex;
-  justify-content: center;
-  background-color: #ffffff;
-  border: 2px solid #444444;
-  font-family: $OpenSans;
-  font-size: 17px;
-  line-height: 20px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #444444;
-}*/
 .button {
     display: inline-block;
     margin: 0;
@@ -34,7 +35,6 @@
         cursor: default;
         opacity: 0.65;
     }
-
     &-primary {
         padding: 8px 20px;
         background-color: #fde247;
@@ -50,4 +50,4 @@
             background-color: #dfc637;
         }
     }
-}
+}*/

@@ -13,16 +13,16 @@ module.exports = {
     devtool: 'inline-source-map',
     devServer: {
         port: 9000,
-        host: '192.168.100.26',
-        //host: 'localhost',
+        //host: '192.168.100.26',
+        host: 'localhost',
         static: {
             directory: path.join(__dirname, './app/'),
         },
         open: true,
         proxy: {
             '/api/**': {
-                target: '192.168.100.26:9000',
-                //target: 'localhost:9000',
+                //target: '192.168.100.26:9000',
+                target: 'localhost:9000',
                 secure: false,
                 changeOrigin: true,
             }
@@ -79,6 +79,13 @@ module.exports = {
             filename: "form.html",
             template: './form.html',
             inject: true
+
+        }),
+        new HtmlWebpackPlugin({
+            filename: "catalog.html",
+            template: './catalog.html',
+            inject: true
+
         }),
         new PrettierPlugin({
                 encoding: 'utf-8',

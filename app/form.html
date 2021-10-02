@@ -15,20 +15,22 @@
                 <div class="header__logo">
                     <a href="index.html">
                         <picture class="header__picture">
-                            <source media="(min-width: 1150px)" srcset="img/logo-desktop.svg" />
+                            <source media="(min-width: 1200px)" srcset="img/logo-desktop.svg" />
                             <source media="(min-width: 768px)" srcset="img/logo-tablet.svg" />
                             <img class="header__img" src="img/logo-mobile.svg" alt="Мишка" />
                         </picture>
                     </a>
                 </div>
                 <nav class="menu">
-                    <ul class="menu__list">
-                        <li class="menu__item">
-                            <a class="menu__link" href="catalog.html">Каталог товаров</a>
+                    <ul class="menu__list menu__list--left">
+                        <li class="menu__item menu__item--left">
+                            <a class="menu__link menu__link--tablet" href="catalog.html">Каталог товаров</a>
                         </li>
-                        <li class="menu__item">
-                            <a class="menu__link" href="form.html">Вязание на заказ</a>
+                        <li class="menu__item menu__item--second">
+                            <a class="menu__link menu__link--tablet" href="form.html">Вязание на заказ</a>
                         </li>
+                    </ul>
+                    <ul class="menu__list menu__list--right">
                         <li class="menu__item">
                             <a class="menu__link" href="#"
                                 ><img class="menu__img" src="img/ico/search.svg" alt="Поиск" /><span
@@ -42,18 +44,22 @@
                                 ><img class="menu__img" src="img/ico/cart.svg" alt="Корзина" />Корзина: пока пуста</a
                             >
                         </li>
-                        <li class="menu__item menu__item--open">
-                            <a class="menu__link" href="#">Новые поступления</a>
+                    </ul>
+                    <ul class="menu__list">
+                        <li class="menu__item menu__item--left menu__item--open">
+                            <a class="menu__link menu__link--down" href="#">Новые поступления</a>
                         </li>
-                        <li class="menu__item menu__item--open">
-                            <a class="menu__link" href="#">Распродажа</a>
+                        <li class="menu__item menu__item--second menu__item--open">
+                            <a class="menu__link menu__link--down" href="#">Распродажа</a>
                         </li>
-                        <li class="menu__item menu__item--open">
+                    </ul>
+                    <ul class="menu__list menu__list--right">
+                        <li class="menu__item menu__item--open menu__item--tablet">
                             <span class="menu__text">Бесплатная доставка по России</span>
                         </li>
                     </ul>
-                    <div class="menu__burger"></div>
                 </nav>
+                <div class="menu__burger"></div>
             </div>
         </header>
 

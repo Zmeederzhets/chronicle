@@ -1,6 +1,7 @@
 .header {
     position: relative;
     box-shadow: 0 1px 0 0 #ececec;
+    z-index: 9;
 
     &__wrapper {
         margin: 0 auto;
