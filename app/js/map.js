@@ -1,7 +1,6 @@
 function init() {
-    let myMap;
     // Создание экземпляра карты и его привязка к контейнеру с заданным id ("map").
-    myMap = new ymaps.Map(
+    const myMap = new ymaps.Map(
         'map',
         {
             center: [59.938635, 30.323118],
@@ -14,7 +13,7 @@ function init() {
         },
     );
 
-    let myPlacemark = new ymaps.Placemark(
+    const myPlacemark = new ymaps.Placemark(
         [59.938635, 30.323118],
         {
             hintContent: 'ул. Большая Конюшенная, д.19/8, офис 101',

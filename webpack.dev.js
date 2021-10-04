@@ -42,7 +42,15 @@ module.exports = {
             },
             {
                 test: /\.s[ac]ss$/i,
-                use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
+                use: ["style-loader",
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 2,
+                            url: false
+                        }
+                    },
+                    "postcss-loader", "sass-loader"],
             },
             {
                 test: /\.css$/i,
@@ -87,11 +95,6 @@ module.exports = {
             inject: true
 
         }),
-        new PrettierPlugin({
-                encoding: 'utf-8',
-                extensions: [".js", ".scss", ".html"]
-            }
-        )
     ]
 };
 

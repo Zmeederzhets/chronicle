@@ -4,4 +4,8 @@
     line-height: 30px;
     font-weight: 700;
     color: #000000;
+    @include min-width(lg) {
+        font-size: 53px;
+        line-height: 57px;
+    }
 }

@@ -1,12 +1,17 @@
 .featured {
     position: relative;
-    @include min-width(sm) {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+
+    @include min-width(lg) {
+        padding-left: 170px;
     }
 
     &__title {
         padding-top: 27px;
+        @include min-width(lg) {
+            position: relative;
+            padding-top: 111px;
+            z-index: 10;
+        }
     }
 
     &__subtitle {
@@ -17,6 +22,13 @@
         font-weight: 700;
         text-transform: uppercase;
         color: #63d1bb;
+        @include min-width(lg) {
+            max-width: 120px;
+            position: absolute;
+            text-align: center;
+            top: 120px;
+            left: 20px;
+        }
     }
 
     &__description {
@@ -27,6 +39,13 @@
         line-height: 24px;
         font-weight: 400;
         color: #444444;
+        @include min-width(lg) {
+            padding-left: 5px;
+            max-width: 290px;
+            padding-top: 52px;
+            font-size: 17px;
+            line-height: 29px;
+        }
     }
 
     &__characteristic {
@@ -36,24 +55,42 @@
         line-height: 20px;
         font-weight: 400;
         color: #444444;
+        @include min-width(lg) {
+            max-width: 290px;
+            padding-top: 31px;
+        }
     }
+
     &__list {
         display: grid;
     }
+
     &__item {
         display: grid;
         grid-template-columns: 100px 1fr;
         align-items: center;
         border-bottom: solid 1px #ececec;
     }
+
     &__term {
         padding: 10px 0;
     }
+
     &__meaning {
         padding: 10px 0;
     }
+
     &__img {
         padding-top: 24px;
+        @include min-width(lg) {
+            position: absolute;
+            top: 36px;
+            left: 50%;
+            right: 0;
+            bottom: -100px;
+            object-fit: cover;
+            z-index: 1;
+        }
     }
 
     &__price {
@@ -63,11 +100,22 @@
         font-size: 17px;
         line-height: 24px;
         font-weight: 700;
+        @include min-width(lg) {
+            padding-top: 106px;
+            max-width: 295px;
+            font-size: 20px;
+        }
     }
 
     &__button {
         margin-top: 28px;
         margin-bottom: 36px;
+        @include min-width(lg) {
+            width: 292px;
+            margin-top: 36px;
+            margin-bottom: 100px;
+            margin-left: 5px;
+        }
     }
 
     &__line {
@@ -78,5 +126,21 @@
         bottom: -41px;
         background-image: url('/img/zigzag-line.svg');
         background-size: contain;
+        @include min-width(lg) {
+            height: 21px;
+            bottom: -100px;
+        }
+    }
+    &__zigzag {
+        @include min-width(lg) {
+            position: absolute;
+            width: 100vw;
+            height: 30px;
+            top: -29px;
+            left: calc(-75px - ((100vw - 1200px) / 2));
+            background-image: url('/img/zigzag.svg');
+            background-size: cover;
+            z-index: 20;
+        }
     }
 }

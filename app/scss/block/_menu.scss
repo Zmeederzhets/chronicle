@@ -88,7 +88,7 @@
         }
 
         &--left {
-            @media (min-width: 768px) and (max-width: 1199px) {
+            @media (min-width: 768px) and (max-width: 1199.98px) {
                 position: absolute;
                 left: 47px;
                 top: 76px;
@@ -132,7 +132,7 @@
         }
 
         &--second {
-            @media (min-width: 768px) and (max-width: 1199px) {
+            @media (min-width: 768px) and (max-width: 1199.98px) {
                 border-left: none;
             }
             @include min-width(sm) {
@@ -141,7 +141,7 @@
         }
 
         &--tablet {
-            @media (min-width: 768px) and (max-width: 1199px) {
+            @media (min-width: 768px) and (max-width: 1199.98px) {
                 display: block;
                 border-left: none;
                 padding: 18px 0 0 0;
@@ -180,7 +180,7 @@
         }
 
         &--tablet {
-            @media (min-width: 768px) and (max-width: 1199px) {
+            @media (min-width: 768px) and (max-width: 1199.98px) {
                 font-size: 15px;
             }
         }
