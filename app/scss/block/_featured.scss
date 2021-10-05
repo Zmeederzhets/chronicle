@@ -1,12 +1,14 @@
 .featured {
     position: relative;
-
     @include min-width(lg) {
         padding-left: 170px;
     }
 
     &__title {
         padding-top: 27px;
+        @include min-width(sm) {
+            padding-top: 32px;
+        }
         @include min-width(lg) {
             position: relative;
             padding-top: 111px;
@@ -22,10 +24,14 @@
         font-weight: 700;
         text-transform: uppercase;
         color: #63d1bb;
-        @include min-width(lg) {
+        @include min-width(sm) {
             max-width: 120px;
             position: absolute;
             text-align: center;
+            top: 38px;
+            left: 595px;
+        }
+        @include min-width(lg) {
             top: 120px;
             left: 20px;
         }
@@ -82,14 +88,18 @@
 
     &__img {
         padding-top: 24px;
-        @include min-width(lg) {
+        @include min-width(sm) {
             position: absolute;
-            top: 36px;
+            top: 116px;
             left: 50%;
+            z-index: 1;
+        }
+
+        @include min-width(lg) {
+            top: 36px;
             right: 0;
             bottom: -100px;
             object-fit: cover;
-            z-index: 1;
         }
     }
 
@@ -132,10 +142,20 @@
         }
     }
     &__zigzag {
+        @include min-width(sm) {
+            position: absolute;
+            height: 24px;
+            right: calc(10px - ((100vw - 768px) / 2));
+            top: -23px;
+            left: calc(2px - ((100vw - 768px) / 2));
+            background-image: url('/img/zigzag.svg');
+            background-size: cover;
+            z-index: 20;
+        }
         @include min-width(lg) {
             position: absolute;
-            width: 100vw;
             height: 30px;
+            right: calc(-90px - ((100vw - 1250px) / 2));
             top: -29px;
             left: calc(-75px - ((100vw - 1200px) / 2));
             background-image: url('/img/zigzag.svg');

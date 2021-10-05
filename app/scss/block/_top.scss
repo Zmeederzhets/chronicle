@@ -22,7 +22,7 @@
         color: #010000;
         text-align: center;
         @include min-width(sm) {
-            padding: 152px 0 475px;
+            padding: 152px 0 503px;
             font-size: 43px;
             line-height: 52px;
         }
@@ -40,8 +40,14 @@
         left: 0;
         right: 0;
         @include min-width(sm) {
+            padding-left: 50px;
+            padding-right: 50px;
             display: flex;
             justify-content: space-between;
+        }
+        @include min-width(lg) {
+            padding-left: 0;
+            padding-right: 0;
         }
     }
 

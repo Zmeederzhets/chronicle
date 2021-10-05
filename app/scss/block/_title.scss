@@ -4,6 +4,10 @@
     line-height: 30px;
     font-weight: 700;
     color: #000000;
+    @include min-width(sm) {
+        font-size: 43px;
+        line-height: 50px;
+    }
     @include min-width(lg) {
         font-size: 53px;
         line-height: 57px;

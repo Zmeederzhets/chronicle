@@ -1,5 +1,12 @@
 .reviews {
     position: relative;
+    @include min-width(lg) {
+        padding-bottom: 90px;
+        background-image: url('/img/index/review.jpg');
+        background-repeat: no-repeat;
+        background-position-x: 0;
+        background-position-y: 21px;
+    }
     &__title {
         padding: 30px 0 22px;
         @include min-width(lg) {
@@ -40,24 +47,39 @@
         color: #444444;
         @include min-width(lg) {
             padding-left: 100px;
+            padding-bottom: 100px;
         }
     }
     &__button {
         margin-bottom: 36px;
         display: flex;
+        @include min-width(lg) {
+            position: absolute;
+            width: 175px;
+            top: 328px;
+            right: 0;
+        }
     }
     &__arrow {
         padding: 12px 0;
         width: 50%;
         background-color: #ffffff;
         border: 1px solid #ececec;
+        @include min-width(lg) {
+            border: none;
+        }
         &--back {
             border-right: 0;
         }
     }
-
     &__write {
         margin-bottom: 51px;
+        @include min-width(lg) {
+            position: absolute;
+            width: 175px;
+            top: 100px;
+            right: 0;
+        }
     }
     &__line {
         position: absolute;
@@ -67,5 +89,9 @@
         bottom: -51px;
         background-image: url('/img/zigzag-line.svg');
         background-size: contain;
+        @include min-width(lg) {
+            height: 21px;
+            bottom: 1px;
+        }
     }
 }

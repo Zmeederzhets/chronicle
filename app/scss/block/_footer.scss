@@ -1,8 +1,15 @@
 .footer {
+    position: relative;
     background-color: #f1f1f1;
 
     &__logo {
         display: none;
+        @include min-width(lg) {
+            position: absolute;
+            display: block;
+            top: 51px;
+            left: calc(100px + ((100vw - 1250px) / 2));
+        }
     }
 
     &__list {
@@ -12,9 +19,15 @@
     }
     &__item {
         padding: 25px 20px 27px;
+        @include min-width(lg) {
+            padding: 60px 20px 50px;
+        }
     }
     &__line {
         color: #e5e5e5;
+        @include min-width(lg) {
+            display: none;
+        }
     }
     &__link {
         padding-top: 16px;
@@ -22,6 +35,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        @include min-width(lg) {
+            padding: 0;
+            position: absolute;
+            top: 51px;
+            right: calc(100px + ((100vw - 1250px) / 2));
+        }
     }
 
     &__text {
@@ -30,6 +49,9 @@
         line-height: 18px;
         font-weight: 700;
         color: #000000;
+        @include min-width(lg) {
+            padding: 0;
+        }
     }
     &__img {
         padding-left: 20px;
