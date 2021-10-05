@@ -45,12 +45,14 @@
         line-height: 24px;
         font-weight: 400;
         color: #444444;
-        @include min-width(lg) {
-            padding-left: 5px;
+        @include min-width(sm) {
             max-width: 290px;
             padding-top: 52px;
             font-size: 17px;
             line-height: 29px;
+        }
+        @include min-width(lg) {
+            padding-left: 5px;
         }
     }
 
@@ -61,8 +63,11 @@
         line-height: 20px;
         font-weight: 400;
         color: #444444;
-        @include min-width(lg) {
+        @include min-width(sm) {
             max-width: 290px;
+            padding-top: 20px;
+        }
+        @include min-width(lg) {
             padding-top: 31px;
         }
     }
@@ -110,16 +115,25 @@
         font-size: 17px;
         line-height: 24px;
         font-weight: 700;
+        @include min-width(sm) {
+            padding-top: 52px;
+            max-width: 288px;
+            font-size: 20px;
+        }
         @include min-width(lg) {
             padding-top: 106px;
             max-width: 295px;
-            font-size: 20px;
         }
     }
 
     &__button {
         margin-top: 28px;
         margin-bottom: 36px;
+        @include min-width(sm) {
+            width: 290px;
+            margin-top: 34px;
+            margin-bottom: 70px;
+        }
         @include min-width(lg) {
             width: 292px;
             margin-top: 36px;
@@ -136,6 +150,10 @@
         bottom: -41px;
         background-image: url('/img/zigzag-line.svg');
         background-size: contain;
+        @include min-width(sm) {
+            height: 15px;
+            bottom: -70px;
+        }
         @include min-width(lg) {
             height: 21px;
             bottom: -100px;

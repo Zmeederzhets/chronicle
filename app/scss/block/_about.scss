@@ -1,7 +1,7 @@
 .about {
     &__title {
         padding: 34px 0 30px;
-        @include min-width(lg) {
+        @include min-width(sm) {
             padding-top: 55px;
             padding-left: 94px;
             padding-bottom: 44px;
@@ -11,11 +11,13 @@
     &__list {
         display: flex;
         flex-direction: column;
+        @include min-width(sm) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
         @include min-width(lg) {
             padding-left: 100px;
             padding-right: 100px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
         }
     }
     &__item {
@@ -29,7 +31,7 @@
         line-height: 20px;
         font-weight: 700;
         color: #000000;
-        @include min-width(lg) {
+        @include min-width(sm) {
             max-width: 290px;
             padding-bottom: 55px;
             font-size: 20px;

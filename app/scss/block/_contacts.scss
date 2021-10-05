@@ -1,5 +1,6 @@
 .contacts {
     position: relative;
+    background-color: #010000;
     @include min-width(lg) {
         margin: 0 auto;
         padding-top: 68px;
