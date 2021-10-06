@@ -1,6 +1,5 @@
 .contacts {
     position: relative;
-    background-color: #010000;
     @include min-width(lg) {
         margin: 0 auto;
         padding-top: 68px;
@@ -11,9 +10,13 @@
     }
     &__flag {
         display: none;
-        @include min-width(lg) {
+        @include min-width(sm) {
             display: block;
             position: absolute;
+            top: 45px;
+            left: 670px;
+        }
+        @include min-width(lg) {
             top: 130px;
             left: 63px;
         }
@@ -25,10 +28,15 @@
         line-height: 30px;
         font-weight: 700;
         color: #000000;
+        @include min-width(sm) {
+            padding-top: 60px;
+            font-size: 43px;
+            line-height: 50px;
+        }
         @include min-width(lg) {
             position: absolute;
             font-size: 53px;
-            top: 115px;
+            top: 80px;
             left: 95px;
         }
     }
@@ -40,11 +48,16 @@
         line-height: 30px;
         font-weight: 400;
         color: #444444;
-        @include min-width(lg) {
+        @include min-width(sm) {
+            width: 100%;
             font-size: 17px;
-            padding-top: 175px;
+            padding-top: 48px;
+            padding-left: 50px;
+            padding-right: 94px;
+        }
+        @include min-width(lg) {
+            padding-top: 170px;
             padding-left: 170px;
-            //padding-right: 10px;
         }
     }
 
@@ -58,15 +71,22 @@
         display: grid;
         grid-template-columns: 19% 1fr;
         gap: 30px;
+        @include min-width(sm) {
+            padding-bottom: 54px;
+            grid-template-columns: 21% 89%;
+            gap: 17px;
+        }
         @include min-width(lg) {
+            padding-bottom: 30px;
             grid-template-columns: 21% 89%;
             gap: 21px;
         }
     }
     &__td--mail {
         border-bottom: solid 1px #62d1ba;
-        @include min-width(lg) {
+        @include min-width(sm) {
             max-width: 200px;
+            height: 30px;
         }
     }
     &__map {
@@ -79,11 +99,15 @@
         margin-top: 39px;
         margin-bottom: 39px;
         max-width: 260px;
+        @include min-width(sm) {
+            margin-top: 56px;
+            margin-bottom: 60px;
+            max-width: 230px;
+        }
         @include min-width(lg) {
             position: absolute;
-            max-width: 230px;
             left: 175px;
-            bottom: 67px;
+            bottom: 50px;
         }
     }
 }

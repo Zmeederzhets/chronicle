@@ -5,7 +5,7 @@
         background-image: url('/img/index/review.jpg');
         background-repeat: no-repeat;
         background-position-x: 0;
-        background-position-y: 8px;
+        background-position-y: 12px;
     }
     @include min-width(lg) {
         padding-bottom: 90px;
@@ -14,7 +14,7 @@
     &__title {
         padding: 30px 0 22px;
         @include min-width(sm) {
-            padding: 85px 0 48px 0;
+            padding: 90px 0 48px 0;
         }
         @include min-width(lg) {
             padding: 90px 0 50px 95px;
@@ -72,7 +72,7 @@
         @include min-width(sm) {
             position: absolute;
             width: 175px;
-            top: 365px;
+            top: 370px;
             right: 50px;
         }
         @include min-width(lg) {
@@ -98,7 +98,7 @@
         @include min-width(sm) {
             position: absolute;
             width: 175px;
-            top: 88px;
+            top: 93px;
             right: 50px;
         }
         @include min-width(lg) {

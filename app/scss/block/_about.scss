@@ -2,6 +2,11 @@
     &__title {
         padding: 34px 0 30px;
         @include min-width(sm) {
+            padding-top: 50px;
+            padding-left: 0;
+            padding-bottom: 44px;
+        }
+        @include min-width(lg) {
             padding-top: 55px;
             padding-left: 94px;
             padding-bottom: 44px;

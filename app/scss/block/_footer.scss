@@ -4,9 +4,13 @@
 
     &__logo {
         display: none;
-        @include min-width(lg) {
+        @include min-width(sm) {
             position: absolute;
             display: block;
+            top: 50px;
+            left: calc(50px + ((100vw - 768px) / 2));
+        }
+        @include min-width(lg) {
             top: 51px;
             left: calc(100px + ((100vw - 1250px) / 2));
         }
@@ -19,13 +23,16 @@
     }
     &__item {
         padding: 25px 20px 27px;
+        @include min-width(sm) {
+            padding: 57px 20px 50px;
+        }
         @include min-width(lg) {
             padding: 60px 20px 50px;
         }
     }
     &__line {
         color: #e5e5e5;
-        @include min-width(lg) {
+        @include min-width(sm) {
             display: none;
         }
     }
@@ -35,9 +42,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        @include min-width(lg) {
+        @include min-width(sm) {
             padding: 0;
             position: absolute;
+            top: 50px;
+            right: calc(50px + ((100vw - 768px) / 2));
+        }
+        @include min-width(lg) {
             top: 51px;
             right: calc(100px + ((100vw - 1250px) / 2));
         }
@@ -49,7 +60,7 @@
         line-height: 18px;
         font-weight: 700;
         color: #000000;
-        @include min-width(lg) {
+        @include min-width(sm) {
             padding: 0;
         }
     }
