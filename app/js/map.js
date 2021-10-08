@@ -31,4 +31,7 @@ function init() {
     myMap.geoObjects.add(myPlacemark);
 }
 
-ymaps.ready(init);
+// поверяю есть ли на странице карта, если есть, то запускаю ее
+if (document.querySelector('.map')) {
+    ymaps.ready(init);
+}

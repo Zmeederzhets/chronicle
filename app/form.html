@@ -8,6 +8,10 @@
         <link rel="shortcut icon" href="#" type="image/x-icon" />
         <title>Mishka — форма заказа</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script
+            src="https://api-maps.yandex.ru/2.0/?load=package.standard,package.geoObjects&amp;lang=ru-RU&amp;apikey=d7daf4eb-01b8-4a66-9021-ffcbd1131182"
+            type="text/javascript"
+        ></script>
     </head>
     <body>
         <header class="header">
@@ -62,10 +66,9 @@
                 <div class="menu__burger"></div>
             </div>
         </header>
-
         <main>
-            <section class="top">
-                <h1 class="top__title title">Вязание на заказ</h1>
+            <section class="top-form">
+                <h1 class="top-form__title title">Вязание на заказ</h1>
             </section>
             <section class="form">
                 <p class="form__subtitle">
@@ -133,8 +136,7 @@
                 </form>
             </section>
         </main>
-
-        <footer class="footer contain">
+        <footer class="footer">
             <a class="footer__logo" href=""><img src="img/logo-footer.svg" alt="Логотип" /></a>
             <ul class="footer__list">
                 <li class="footer__item">
