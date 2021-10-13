@@ -67,10 +67,11 @@
             </div>
         </header>
         <main>
-            <section class="top-catalog">
-                <h1 class="top-catalog__title title">Вязание на заказ</h1>
+            <section class="top-page">
+                <h1 class="top-page__title title">Каталог товаров</h1>
+                <span class="top-page__zigzag"></span>
             </section>
-            <section class="catalog">
+            <section class="catalog contain">
                 <div class="catalog__item">
                     <picture class="catalog__picture">
                         <!-- WebP  на стандартные экраны и ритину для разный вьпортов-->
@@ -106,9 +107,11 @@
                     </picture>
                     <h3 class="catalog__title">Зайчик-попрыгайчик</h3>
                     <p class="catalog__characteristic">Рост 30 см, вес 200 г</p>
-                    <div class="sale">
+                    <div class="catalog__sale">
                         <p class="catalog__price">1 200 руб.</p>
-                        <button type="button"><img src="img/ico/cart.svg" alt="Добавить в карзину" /></button>
+                        <button class="catalog__button" type="button">
+                            <img src="img/ico/cart.svg" alt="Добавить в карзину" />
+                        </button>
                     </div>
                 </div>
                 <div class="catalog__item">
@@ -146,9 +149,11 @@
                     </picture>
                     <h3 class="catalog__title">Корзинка для белья</h3>
                     <p class="catalog__characteristic">Диаметр 15 см, высота 10 см</p>
-                    <div class="sale">
+                    <div class="catalog__sale">
                         <p class="catalog__price">690 руб.</p>
-                        <button type="button"><img src="img/ico/cart.svg" alt="Добавить в карзину" /></button>
+                        <button class="catalog__button" type="button">
+                            <img src="img/ico/cart.svg" alt="Добавить в карзину" />
+                        </button>
                     </div>
                 </div>
                 <div class="catalog__item">
@@ -186,58 +191,79 @@
                     </picture>
                     <h3 class="catalog__title">Большая корзинка для игрушек</h3>
                     <p class="catalog__characteristic">Диаметр 30 см, высота 30 см</p>
-                    <div class="sale">
+                    <div class="catalog__sale">
                         <p class="catalog__price">1 500 руб.</p>
-                        <button type="button"><img src="img/ico/cart.svg" alt="Добавить в карзину" /></button>
+                        <button class="catalog__button" type="button">
+                            <img src="img/ico/cart.svg" alt="Добавить в карзину" />
+                        </button>
                     </div>
                 </div>
             </section>
-            <section class="video">
-                <div>
-                    <img src="" alt="" />
-                    <h3>Процесс производства</h3>
+            <section class="video contain">
+                <div class="video__wrapper">
+                    <div class="video__box">
+                        <div class="video__title">
+                            <img class="video__ico" src="img/ico/video.svg" alt="" />
+                            <h3 class="video__text">Процесс производства</h3>
+                        </div>
+                        <picture class="video__picture">
+                            <!-- WebP  на стандартные экраны и ритину для разный вьпортов-->
+                            <source
+                                type="image/webp"
+                                media="(min-width: 1150px)"
+                                srcset="
+                                    img/catalog/video/video-desktop_1x.webp 1x,
+                                    img/catalog/video/video-desktop_2x.webp 2x
+                                "
+                            />
+                            <source
+                                type="image/webp"
+                                media="(min-width: 768px)"
+                                srcset="
+                                    img/catalog/video/video-tablet_1x.webp 1x,
+                                    img/catalog/video/video-tablet_2x.webp 2x
+                                "
+                            />
+                            <source
+                                type="image/webp"
+                                srcset="
+                                    img/catalog/video/video-mobile_1x.webp,
+                                    img/catalog/video/video-mobile_2x.webp 2x
+                                "
+                            />
+                            <!--jpg на стандартные экраны и ритину для разный вьпортов-->
+                            <source
+                                media="(min-width: 1150px)"
+                                srcset="
+                                    img/catalog/video/video-desktop_1x.jpg 1x,
+                                    img/catalog/video/video-desktop_2x.jpg 2x
+                                "
+                            />
+                            <source
+                                media="(min-width: 768px)"
+                                srcset="
+                                    img/catalog/video/video-tablet_1x.jpg 1x,
+                                    img/catalog/video/video-tablet_2x.jpg 2x
+                                "
+                            />
+                            <img
+                                class="video__img"
+                                src="img/catalog/video/video-mobile_1x.jpg"
+                                srcset="img/catalog/video/video-mobile_2x.jpg 2x"
+                                alt="Большая вязаная корзинка для игрушек"
+                            />
+                            <button class="video__play"><img src="img/ico/play.svg" alt="" /></button>
+                        </picture>
+                    </div>
+                    <p class="video__description">
+                        По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши
+                        товары.
+                    </p>
+                    <button class="video__button button" type="button">Сделать заказ</button>
                 </div>
-                <picture class="video__picture">
-                    <!-- WebP  на стандартные экраны и ритину для разный вьпортов-->
-                    <source
-                        type="image/webp"
-                        media="(min-width: 1150px)"
-                        srcset="img/catalog/video/video-desktop_1x.webp 1x, img/catalog/video/video-desktop_2x.webp 2x"
-                    />
-                    <source
-                        type="image/webp"
-                        media="(min-width: 768px)"
-                        srcset="img/catalog/video/video-tablet_1x.webp 1x, img/catalog/video/video-tablet_2x.webp 2x"
-                    />
-                    <source
-                        type="image/webp"
-                        srcset="img/catalog/video/video-mobile_1x.webp, img/catalog/video/video-mobile_2x.webp 2x"
-                    />
-                    <!--jpg на стандартные экраны и ритину для разный вьпортов-->
-                    <source
-                        media="(min-width: 1150px)"
-                        srcset="img/catalog/video/video-desktop_1x.jpg 1x, img/catalog/video/video-desktop_2x.jpg 2x"
-                    />
-                    <source
-                        media="(min-width: 768px)"
-                        srcset="img/catalog/video/video-tablet_1x.jpg 1x, img/catalog/video/video-tablet_2x.jpg 2x"
-                    />
-                    <img
-                        class="video__img"
-                        src="img/catalog/video/video-mobile_1x.jpg"
-                        srcset="img/catalog/video/video-mobile_2x.jpg 2x"
-                        alt="Большая вязаная корзинка для игрушек"
-                    />
-                </picture>
-                <video src=""></video>
-                <p>
-                    По просьбам наших любимых фолловеров мы сняли для вас подробное видео о том, как появляются наши
-                    товары.
-                </p>
-                <button type="button">Сделать заказ</button>
             </section>
         </main>
-        <footer class="footer contain">
+        <footer class="footer">
             <a class="footer__logo" href=""><img src="img/logo-footer.svg" alt="Логотип" /></a>
             <ul class="footer__list">
                 <li class="footer__item">
