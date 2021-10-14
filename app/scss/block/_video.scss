@@ -5,6 +5,7 @@
         @include min-width(lg) {
             padding: 0;
             margin-top: 55px;
+            margin-bottom: 105px;
         }
     }
     &__wrapper {
@@ -37,8 +38,10 @@
         }
         @include min-width(lg) {
             position: absolute;
+            width: 150px;
             flex-direction: column;
-            right: 0;
+            right: 178px;
+            top: 14px;
         }
     }
     &__ico {
@@ -50,9 +53,17 @@
         @include min-width(sm) {
             padding-left: 32px;
         }
+        @include min-width(lg) {
+            padding-top: 20px;
+            padding-left: 0;
+            line-height: 26px;
+        }
     }
     &__picture {
         position: relative;
+        @include min-width(lg) {
+            margin-bottom: -5px;
+        }
     }
     &__play {
         display: flex;
@@ -100,6 +111,9 @@
         }
         @include min-width(lg) {
             position: absolute;
+            width: 230px;
+            bottom: 14px;
+            right: 57px;
         }
     }
 }

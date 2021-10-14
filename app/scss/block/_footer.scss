@@ -31,6 +31,8 @@
         }
     }
     &__line {
+        margin: 0 auto;
+        width: 260px;
         color: #e5e5e5;
         @include min-width(sm) {
             display: none;
