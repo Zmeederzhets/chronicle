@@ -30,6 +30,9 @@
             top: 68px;
             left: 0;
         }
+        @include min-width(lg) {
+            left: -13px;
+        }
     }
     &__list fieldset {
         position: relative;
@@ -40,6 +43,9 @@
         @include min-width(sm) {
             border: 0 none;
             padding-left: 167px;
+        }
+        @include min-width(lg) {
+            padding-left: 100px;
         }
     }
     &__type {
@@ -72,7 +78,6 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             column-gap: 21px;
-            z-index: 5;
             &:before {
                 position: absolute;
                 right: calc(-50px - (100vw - 768px) / 2);
@@ -83,6 +88,10 @@
                 background-color: #f1f1f1;
                 z-index: -1;
             }
+        }
+        @include min-width(lg) {
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 0;
         }
     }
     &__colour label {
@@ -111,8 +120,10 @@
     &__name input {
         flex: 1;
         margin-left: 30px;
+        @include min-width(lg) {
+            margin-right: 100px;
+        }
     }
-
     &__tel {
         margin-top: 29px;
         @include min-width(sm) {
@@ -130,14 +141,15 @@
             }
         }
     }
-
     &__tel input {
         @include min-width(sm) {
             flex: 1;
             background-color: #f1f1f1;
         }
+        @include min-width(lg) {
+            margin-right: 100px;
+        }
     }
-
     &__email {
         margin-top: 29px;
         @include min-width(sm) {
@@ -162,6 +174,9 @@
             flex: 1;
             background-color: #f1f1f1;
         }
+        @include min-width(lg) {
+            margin-right: 100px;
+        }
     }
     &__email legend,
     .form__tel legend {
@@ -181,6 +196,9 @@
             background-color: #ffffff;
             border: 2px solid #444444;
         }
+        @include min-width(lg) {
+            margin-right: 100px;
+        }
         &::placeholder {
             max-width: 200px;
             padding-top: 14px;
@@ -198,6 +216,9 @@
             flex-direction: row-reverse;
             justify-content: space-between;
             align-items: center;
+        }
+        @include min-width(lg) {
+            justify-content: space-around;
         }
     }
     &__footnote {
@@ -321,6 +342,9 @@
         @include min-width(sm) {
             top: 34px;
             right: 24px;
+        }
+        @include min-width(lg) {
+            right: 106px;
         }
     }
     &__button {
