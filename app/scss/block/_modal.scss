@@ -1,0 +1,112 @@
+.modal {
+    display: none;
+
+    &--show {
+        display: block;
+    }
+
+    &__overlay {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.9);
+        z-index: 33;
+    }
+
+    &__container {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        top: 50%;
+        left: 47%;
+        width: 320px;
+        padding: 36px 30px 46px;
+        background-color: #fff;
+        transform: translate(-54%, -50%);
+        border: 1px solid #c6c6c6;
+        box-shadow: 0 5px 10px 0 rgba(0, 1, 1, 0.25);
+        z-index: 99;
+        @include min-width(sm) {
+            width: 568px;
+            padding: 36px 108px 46px;
+        }
+    }
+
+    &__title {
+        align-self: center;
+        width: 148px;
+        margin: 0;
+        margin-bottom: 25px;
+        font-size: 25px;
+        font-weight: 700;
+        line-height: 30px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__form-title {
+        margin-bottom: 28px;
+        text-align: center;
+        @include min-width(sm) {
+            width: 354px;
+            font-size: 30px;
+            line-height: 57px;
+        }
+    }
+
+    &__form-input:checked + .modal__form-label {
+        border-color: #63d1bb;
+    }
+
+    &__form-input:disabled + .modal__form-label {
+        opacity: 0.3;
+    }
+    &__form-items {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 31px;
+    }
+
+    &__form-label {
+        display: block;
+        width: 82px;
+        height: 52px;
+        padding: 15px 0;
+        text-align: center;
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 16px;
+        text-transform: uppercase;
+        border: 2px solid #63d1bb;
+        @include min-width(sm) {
+            width: 112px;
+        }
+
+        &:hover,
+        &:focus {
+            border-color: rgba(68, 68, 68, 0.3);
+        }
+    }
+
+    &__form-submit {
+        width: 260px;
+        padding: 14px 0;
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 16px;
+        color: #fff;
+        text-transform: uppercase;
+        background-color: #63d1bb;
+        border: none;
+        @include min-width(sm) {
+            width: 350px;
+            padding: 18px 0;
+        }
+    }
+}

@@ -11,24 +11,18 @@
     font-weight: 700;
     text-transform: uppercase;
     color: #444444;
+    cursor: pointer;
+    &:hover,
+    &:focus-visible {
+        background-color: #444444;
+        color: #ffffff;
+    }
+    &:active {
+        color: #666666;
+    }
     &:disabled,
     &-disabled {
         cursor: default;
         opacity: 0.65;
-    }
-    &-primary {
-        padding: 8px 20px;
-        background-color: #fde247;
-        color: #162417;
-        border-radius: 4px;
-        font-size: 14px;
-        font-weight: 600;
-        text-transform: uppercase;
-        transition: 0.3s ease-in-out;
-
-        &:hover,
-        &:focus-visible {
-            background-color: #dfc637;
-        }
     }
 }

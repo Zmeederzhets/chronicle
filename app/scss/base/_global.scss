@@ -10,6 +10,12 @@ body {
 }
 a {
     text-decoration: none;
+    &:hover {
+        opacity: 0.6;
+    }
+    &:active {
+        opacity: 0.3;
+    }
 }
 img {
     max-width: 100%;

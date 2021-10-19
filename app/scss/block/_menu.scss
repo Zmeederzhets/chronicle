@@ -152,6 +152,8 @@
     &__img {
         position: absolute;
         left: 26px;
+        opacity: 0.4;
+        filter: hue-rotate(320deg);
         @include min-width(sm) {
             position: initial;
             padding-left: 32px;

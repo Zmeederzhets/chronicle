@@ -22,6 +22,7 @@
         display: block;
         margin: 0 auto;
         padding: 20px 0;
+        z-index: 50;
         @include min-width(sm) {
             margin: 0;
             padding: 22px 0 14px 48px;

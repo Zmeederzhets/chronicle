@@ -72,7 +72,7 @@
                 <span class="top-page__zigzag"></span>
             </section>
             <section class="catalog contain">
-                <div class="catalog__item">
+                <div class="catalog__item bay">
                     <picture class="catalog__picture">
                         <!-- WebP  на стандартные экраны и ритину для разный вьпортов-->
                         <source
@@ -114,7 +114,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="catalog__item">
+                <div class="catalog__item bay">
                     <picture class="catalog__picture">
                         <!-- WebP  на стандартные экраны и ритину для разный вьпортов-->
                         <source
@@ -156,7 +156,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="catalog__item">
+                <div class="catalog__item bay">
                     <picture class="catalog__picture">
                         <!-- WebP  на стандартные экраны и ритину для разный вьпортов-->
                         <source
@@ -193,7 +193,7 @@
                     <p class="catalog__characteristic">Диаметр 30 см, высота 30 см</p>
                     <div class="catalog__sale">
                         <p class="catalog__price">1 500 руб.</p>
-                        <button class="catalog__button" type="button">
+                        <button class="catalog__button order" type="button">
                             <img src="img/ico/cart.svg" alt="Добавить в карзину" />
                         </button>
                     </div>
@@ -252,7 +252,9 @@
                                 srcset="img/catalog/video/video-mobile_2x.jpg 2x"
                                 alt="Большая вязаная корзинка для игрушек"
                             />
-                            <button class="video__play"><img src="img/ico/play.svg" alt="" /></button>
+                            <button class="video__play">
+                                <img class="video__play--btn" src="img/ico/play.svg" alt="" />
+                            </button>
                         </picture>
                     </div>
                     <p class="video__description">
@@ -282,5 +284,23 @@
                 <img class="footer__img" src="img/ico/htmlacademy.svg" alt="Лого HTML-академии"
             /></a>
         </footer>
+        <div class="modal">
+            <div class="modal__overlay"></div>
+            <div class="modal__container">
+                <h2 class="modal__title">Добавить в корзину</h2>
+                <form class="modal__form" action="" method="get">
+                    <span class="modal__form-title">Выберите размер:</span>
+                    <div class="modal__form-items">
+                        <input class="modal__form-input visually-hidden" type="checkbox" name="size-s" id="size-s" />
+                        <label class="modal__form-label" for="size-s">s</label>
+                        <input class="modal__form-input visually-hidden" type="checkbox" name="size-m" id="size-m" />
+                        <label class="modal__form-label" for="size-m">m</label>
+                        <input class="modal__form-input visually-hidden" type="checkbox" name="size-l" id="size-l" />
+                        <label class="modal__form-label" for="size-l">l</label>
+                    </div>
+                    <button class="modal__form-submit" type="submit">Добавить</button>
+                </form>
+            </div>
+        </div>
     </body>
 </html>

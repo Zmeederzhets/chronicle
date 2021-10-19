@@ -142,7 +142,7 @@
                     />
                 </picture>
                 <p class="featured__price">Цена: 990 руб.</p>
-                <button class="featured__button button">ЗАКАЗАТЬ</button>
+                <button class="featured__button button order">ЗАКАЗАТЬ</button>
                 <span class="featured__line"></span>
                 <span class="featured__zigzag"></span>
             </section>
@@ -197,7 +197,7 @@
                             <img width="50px" height="26px" src="img/ico/next-arrow.svg" alt="" />
                         </button>
                     </div>
-                    <a href="#" class="reviews__write button">Написать</a>
+                    <button class="reviews__write button">Написать</button>
                 </div>
                 <span class="reviews__line"></span>
             </section>
@@ -243,5 +243,23 @@
                 <img class="footer__img" src="img/ico/htmlacademy.svg" alt="Лого HTML-академии"
             /></a>
         </footer>
+        <div class="modal">
+            <div class="modal__overlay"></div>
+            <div class="modal__container">
+                <h2 class="modal__title">Добавить в корзину</h2>
+                <form class="modal__form" action="" method="get">
+                    <span class="modal__form-title">Выберите размер:</span>
+                    <div class="modal__form-items">
+                        <input class="modal__form-input visually-hidden" type="checkbox" name="size-s" id="size-s" />
+                        <label class="modal__form-label" for="size-s">s</label>
+                        <input class="modal__form-input visually-hidden" type="checkbox" name="size-m" id="size-m" />
+                        <label class="modal__form-label" for="size-m">m</label>
+                        <input class="modal__form-input visually-hidden" type="checkbox" name="size-l" id="size-l" />
+                        <label class="modal__form-label" for="size-l">l</label>
+                    </div>
+                    <button class="modal__form-submit" type="submit">Добавить</button>
+                </form>
+            </div>
+        </div>
     </body>
 </html>

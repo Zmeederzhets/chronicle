@@ -78,6 +78,16 @@
             bottom: 193px;
         }
     }
+    &__play--btn {
+        width: 101px;
+        &:hover {
+            width: 121px;
+        }
+        &:active {
+            width: 81px;
+            opacity: 0.6;
+        }
+    }
     &__description {
         margin: 0 auto;
         padding-top: 24px;

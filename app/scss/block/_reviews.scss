@@ -55,14 +55,14 @@
         }
     }
     &__author {
-        display: block;
-        padding-bottom: 32px;
+        display: inline-block;
+        margin-bottom: 32px;
         line-height: 30px;
         font-weight: 400;
         color: #444444;
         @include min-width(lg) {
-            padding-left: 100px;
-            padding-bottom: 100px;
+            margin-left: 100px;
+            margin-bottom: 100px;
         }
     }
 
@@ -86,6 +86,13 @@
         width: 50%;
         background-color: #ffffff;
         border: 1px solid #ececec;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.6;
+        }
+        &:active {
+            opacity: 0.3;
+        }
         @include min-width(sm) {
             border: none;
         }
